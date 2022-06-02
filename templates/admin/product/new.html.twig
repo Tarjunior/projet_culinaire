@@ -1,0 +1,28 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title %}Ajouter un Produit{% endblock %}
+
+{% block body %}
+
+<main id="main">
+    <section class="adminForm">
+
+        <div class="form-cate">
+    
+            <div class="retour">
+                <a href="{{ path('admin_product_index') }}" class="">Retour à la liste</a>
+            </div>
+            
+            <div class="">
+                <div class="">
+                    <h1 class="h1catadmin">Ajouter un produit</h1>
+                </div>
+                <div id="cate-form">
+                    {{ include('admin/product/_form.html.twig') }}
+                </div>              
+            </div>
+        </div>
+    </section>
+</main> 
+
+{% endblock %}

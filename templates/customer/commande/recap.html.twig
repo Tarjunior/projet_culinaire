@@ -1,0 +1,113 @@
+{% extends "customer/base.html.twig" %}
+
+{% block body %}
+
+<main id="main">
+    <section id="description">
+
+        <div class="row">
+
+            <div class="presentation">
+                <h1 class="">
+                   Récapitulatif Commande
+                </h1>
+
+                <div class="alertPanRespon">
+                    {% include "_messages_flash.html.twig" %}
+                </div>
+            </div>
+
+            
+            <div class="panier col-8">
+
+                <div class="table">
+                    <div class="">
+                            <div class="">
+                            
+                                <table class="lignes">
+                                    <thead class="">
+                                        <div class="border-panier">
+                                            <tr>
+                                            
+                                                <th class="cellule" scope="col">Produit</th>
+                                                <th class="cellule" scope="col">P.U</th>
+                                                <th class="cellule" scope="col" >Qté</th>
+                                                <th class="cellule cell" scope="col">Total</th>
+                                                
+                                            </tr>
+                                        </div>
+                                       
+                                    </thead>
+                                        
+                                    <tbody>
+                                  
+                                        {% for item in cart %}
+                                        
+                                            <tr>
+                                                <td>                                               
+                                                    <div class="info-panier">
+                                                        <a href="{{path('ecommerce_product',{'id' : item.product.id})}}"><img src=" {{ item.product.image }}" alt="{{ item.product.name }}" class="imageProductCart"></a> 
+                                                        <div class="info-panier2">
+                                                            <p class="p-name">{{ item.product.name }}</p>
+                                                            <p class="p-description">{{ item.product.description }}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                
+                                                <td>{{ item.product.price | priceFormatEuro }}</td>
+                                                <td>
+                                                <div class="QTY">
+                                                    <button class="">{{ item.qty }}</button>
+                                                    </div>
+                                                </td>
+                                                <td>{{ item.total | priceFormatEuro }}</td>
+                                            </tr>
+                                        {% endfor %}
+
+                                        <div class="sous-total">
+                                        <tr>
+                                            <th colspan="2"></th>
+                                            
+                                                <th class="sous-total"><strong>Sous Total</strong></th>
+                                            
+                                            <th><strong>{{ totalCart | priceFormatEuro }}</strong></th>
+                                        </tr>
+                                        </div>
+                                    </tbody>
+                                    
+                                </table>
+                            </div>
+
+                            <div class="btn-vali">
+                                <a href="{{ path('cart_detail') }}" class="btn-valider">Modifier mon panier</a>
+                            </div>  
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    
+    <section class="recapPanier">
+
+        <div class="recaP form-cate col-6">                          
+                                                                    
+            <div class="recapitulatif">
+                <div class="">
+                    <h1 class="h1catadmin">Adresse de livraison</h1>
+                </div>
+                <div id="cate-form">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn-valider" id="buttonSubmit">Valider l'adresse et payer la commande</button>
+
+                    {{ form_end(form) }}
+
+                </div>              
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

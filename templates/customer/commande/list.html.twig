@@ -1,0 +1,75 @@
+{% extends "customer/base.html.twig" %}
+
+{% block body %}
+
+<main id="main">
+    <section id="description">
+
+        <div class="row">
+
+            <div class="presentation">
+                <h2 class="">
+                   Mes commandes
+                </h2>
+
+                <div class="alertPanRespon">
+                    {% include "_messages_flash.html.twig" %}
+                </div>
+            </div>
+
+            
+            <div class="panier col-8">
+
+                <div class="table">
+                    <div class="commandes">
+                        <div class="commandes">
+                            
+                            <table class="lignes col-12">
+                                <thead class="smart">
+                                    <div class="border-panier borderCom">
+                                        <tr class="COM">
+                                            
+                                            <th class="celluleList listCom" scope="col">#numero</th>
+                                            <th class="celluleList listCom" scope="col">Date</th>
+                                            <th class="celluleList listCom" scope="col">Payée?</th>
+                                            <th class="celluleList listCom" scope="col">Total</th>
+                                            <th class="celluleList listCom" scope="col">Action</th>
+                                                
+                                        </tr>
+                                    </div>
+                                </thead>
+                                        
+                                <tbody class="InfoComm">
+                                  
+                                    {% for item in commandShop %}
+                                    <div class="info-panier">
+                                        <tr class="info-commande">
+                                            <td>{{item.id}}</td>
+                                            <td>{{ item.createdAt | date('d-M-Y') }}</td>
+                                                
+                                            <td>
+                                                {% if item.isPayed is same as false %}
+                                                <span class="text-secondary">Non payée</span>
+                                                {% else %}
+                                                <span class="text-success">Payée</span>
+                                                {% endif %}
+                                            </td>
+
+                                            <td>{{ item.totalPrice | priceFormatEuro }}</td>
+                                            <td>
+                                            <a href="{{ path('command_shop_detail',{'id': item.id }) }}" class="btn-form btnComResp">Consulter</a>
+                                            </td>                                                
+                                        </tr>
+                                    </div>
+                                    {% endfor %}
+                                </tbody>                                    
+                            </table>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title %}Ajouter une Recette{% endblock %}
+
+{% block body %}
+
+<main id="main">
+    <section class="adminForm">
+
+        <div class="form-cate">
+    
+            <div class="retour">
+                <a href="{{ path('admin_recipe_index') }}" class="">Retour à la liste</a>
+            </div>
+       
+            <div class="">
+                <div class="">
+                    <h1 class="h1catadmin">Ajouter une recette</h1>
+                </div>
+                <div id="cate-form">
+                    {{ include('admin/recipe/_form.html.twig') }}
+                </div>              
+            </div>
+        </div>
+    </section>
+</> 
+
+{% endblock %}

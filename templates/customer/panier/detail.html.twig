@@ -1,0 +1,118 @@
+{% extends "customer/base.html.twig" %}
+
+{% block body %}
+
+<main id="main">
+    <section id="description">
+
+        <div class="row">
+
+            <div class="presentation">
+                <h1 class="">
+                    Mon panier
+                </h1>
+
+                <div class="alertPanier">
+                    {% include "_messages_flash.html.twig" %}
+                </div>
+            </div>
+
+            
+            
+        
+
+            <div class="panier col-8">
+
+                <div class="table">
+                    <div class="smartPanier">
+                        {% if cart | length > 0 %}
+
+                            <div class="td-panier">
+                            
+                                <table class="lignes">
+                                    <thead class="">
+                                        <div class="border-panier">
+                                            <tr>
+                                            
+                                                <th class="cellule" scope="col">Produit</th>
+                                                <th class="cellule" scope="col">P.U</th>
+                                                <th class="cellule" scope="col" >Qté</th>
+                                                <th class="cellule cell" scope="col">Total</th>
+                                                
+                                            </tr>
+                                        </div>
+                                       
+                                    </thead>
+                                        
+                                    <tbody>
+                                  
+                                        {% for item in cart %}
+                                        
+                                            <tr>
+                                                <td>                                               
+                                                    <div class="info-panier">
+                                                        <a href="{{path('ecommerce_product',{'id' : item.product.id})}}"><img src=" {{ item.product.image }}" alt="{{ item.product.name }}" class="imageProductCart"></a> 
+                                                        <div class="info-panier2">
+                                                            <p class="p-name">{{ item.product.name }}</p>
+                                                            <p class="p-description">{{ item.product.description }}</p>
+                                                            <a class="btn-panier" href="{{ path('cart_remove',{'id' : item.product.id }) }}"><i class="fas fa-trash"></i> Supprimer</a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                
+                                                <td>{{ item.product.price | priceFormatEuro }}</td>
+                                                <td>
+                                                <div class="QTY">
+                                                    <a class="" href="{{ path('cart_decrement',{'id': item.product.id}) }}"><i class="chef fas fa-minus-circle"></i></a>
+                                                    <button class="">{{ item.qty }}</button>
+                                                    <a class="" href="{{ path('cart_add',{'id': item.product.id}) }}?returnToCart=true"><i class="chef fas fa-plus-circle"></i></a>
+                                                    </div>
+                                                </td>
+                                                <td>{{ item.total | priceFormatEuro }}</td>
+                                            </tr>
+                                        {% endfor %}
+
+                                        <div class="sous-total">
+                                        <tr>
+                                            <th colspan="2"></th>
+                                            
+                                                <th class="sous-total"><strong>Sous Total</strong></th>
+                                            
+                                            <th><strong>{{ totalCart | priceFormatEuro }}</strong></th>
+                                        </tr>
+                                        </div>
+                                    </tbody>
+                                    
+                                </table>
+                            </div>
+
+                            {% if app.user %}
+
+                            <div class="btn-vali">
+                                <a href="{{ path('command_recap') }}" class="btn-valider"> Valider mon panier</a>
+                            </div>
+
+                            {% else %}
+                                
+
+                            <div class="btn-vali">
+                                <a href="{{ path('app_login') }}" class="btn-valider"> Valider mon panier</a>
+                            </div>
+
+                            {% endif %}
+
+                        {% else %}
+
+                            <p class="p-panier">Le panier est vide.</p>
+                            <br/>
+                            <a href="{{ path('ecommerce') }}" class="btn-valider"><i class="fa-solid fa-credit-card"></i> Continuer le shopping</a>
+                        {% endif  %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+</section>
+ </main>
+
+{% endblock %}

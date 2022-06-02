@@ -1,0 +1,57 @@
+{% extends "customer/base.html.twig" %}
+
+{% block title %}Recettes Salées{% endblock %}
+
+{% block body %}
+
+    <main id="main">
+
+        <section id="description">
+
+            <div class="accueil">
+
+                <div class="presentation">
+
+                    <h1 class="title">Tu es plutôt salé ? Par là il y a de quoi te régaler !</h1>
+                    <p class="intro">Apéros, entrées, plats... Besoin d'une petite idée ? Tu trouveras ton bonheur ici !</p>
+                </div>
+
+                {{ knp_pagination_render(recipes) }}
+                    
+                <div class="row">
+
+                    {% for recipe in recipes %}
+
+                    <div class="col-3 item sell">
+
+                        <a class="col-12" href="{{ path('recipe_salty_one',{'id' : recipe.id})}}">
+                            <img class="image-home" src="{{recipe.image}}" alt="{{recipe.name}}">
+                            <h3 class="recipe">{{recipe.name}}</h3>
+                            <p class="dscpt">Catégorie : {{recipe.category.name}}</p>
+                        </a>
+
+                        <div class="detail">
+                            <p><img class="chef" src="/images/chef.png" alt="">{{recipe.difficulty}}</p>
+                            <p><i class="chef fa-regular fa-clock"></i><br>{{recipe.duration}}</p>
+                            <p><i class="chef fas fa-utensils"></i><br>{{recipe.portion}}</p>
+
+                            {% if recipe.vegetarian is same as true %}
+                                     
+                            <p class="veg"><i class="chef fas fa-leaf veg"></i><br>végétarien</p>
+
+                            {% endif %}
+
+                        </div>
+                            
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {{ knp_pagination_render(recipes) }}
+
+            </div>
+        </section>
+
+    </main>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title %}Les Catégories{% endblock %}
+
+{% block body %}
+
+    <main id="">
+
+        <section id="description">
+
+            <div class="row">
+               
+                <div class="presentation">
+
+                    <h1 class="title-cat">Gestion des catégories</h1>
+
+                     {% include "_messages_flash.html.twig" %}
+                    
+                    {# <div class="form-cate col-5 smart">
+
+                        {{form_start(form)}}
+
+                        <label for="filterByName">Filtrer par nom</label>
+                        {{form_row(form.filterByName)}} #}
+                        {# {{form_row(form.filterByCategory)}} #}
+                        <!--> <style> .form-label, #filterByCategory {display:none;} </style> <!-->
+
+                        {# <button type="submit" class="btn-form"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <a class="btn-restart" href={{ path('admin_category_index')}}>Réinitialiser</a>
+
+                        {{form_end(form)}}
+
+                    </div>  #}
+
+                    {# <div class="alertBoutique">
+                        {% include "_messages_flash.html.twig" %}
+                    </div> #}
+
+                    <p class="intro"></p>
+                     <div class="btnshow btn-ajouter">
+                        <a href="{{ path('admin_category_new') }}" class="btneye"><i class="fas fa-plus"></i> Ajouter</a>
+                    </div>
+
+                    {{ knp_pagination_render(categories) }}
+                    
+                </div>
+
+                <!-- Col 1 -->
+                {% for category in categories %}
+                    <div class="col-3 item sell">
+
+                        <div class="imsell" href="">
+                            <h4 class="h4-cat">{{ category.name }}</h4>
+                            <img class="image-home" src="{{ category.image }}" alt="Image catégorie">
+                        </div>
+                            <div class="btn-admin">
+                                <a href="{{ path('admin_category_edit',{ 'id' : category.id } ) }}" class="btn-category"><i class="fa-solid fa-pen"></i> Modifier</a>
+                            </div>
+                        {# <div class="btnshow">
+                            <a href="{{path('category_show',{ 'id' : category.id })}}}" class="btneye"><i class="fas fa-eye"></i> Consulter</a>
+                        </div>               #}
+                    </div>
+                {% endfor %}          
+
+            </div> <!-- row -->
+
+            {{ knp_pagination_render(categories) }}    
+
+        </section>
+        <!-- FIN SECTION 2 DESCRIPTION -->
+
+    </main>
+    <!-- FIN MAIN -->
+{% endblock %}

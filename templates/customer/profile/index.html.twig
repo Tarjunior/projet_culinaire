@@ -1,0 +1,43 @@
+{% extends 'customer/base.html.twig' %}
+
+{% block title %}Hello ProfileController!{% endblock %}
+
+{% block body %}
+
+    <main id="main">    
+        <section class="pageCompte">
+
+            <div class="">
+
+                <div class="couverture">
+                    <img  src="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">  
+                </div>
+
+                <div>
+                    <img class="avatarProfile" src="https://images.unsplash.com/photo-1613865342914-5c41d188d02d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80" alt="">            
+                </div>
+
+                <nav class="navCompte">
+                    <a href="{{path('account_edit_password')}}">Modifier le mot de passe</a>
+                    <a href="{{path('command_shop_list')}}">Mes commandes</a>
+
+                    <form class="form-delete-profile" method="post" action="{{ path('app_register_delete', {'id': app.user.id}) }}" onsubmit="return confirm('Vous êtes sûr de bien vouloir supprimer le compte?');">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ app.user.id) }}">
+                    <button class="bt-delete-compte">Supprimer mon Compte</button>
+                    </form>
+                </nav>
+                    
+
+            </div>
+
+                                              
+            <div class="infoUser col-12">
+                <p><strong>Prénom :</strong> {{ app.user.FirstName }}</p>
+                <p><strong>Nom :</strong> {{ app.user.LastName }}</p>
+                <p><strong>E-mail :</strong> {{ app.user.email }}</p>
+            </div>
+
+        </section>
+    </main>
+
+{% endblock %}

@@ -1,0 +1,202 @@
+<header id="header">
+
+    {# <!-- P1 - En-tête --> #}
+
+        <div class="color-fond">
+            <div class="container navlogo">
+
+                {# <!-- LOGO --> #}
+
+                <div class="logo">
+                    <a class="dessin" href="{{ path('home')}}">
+                        <img src="/images/Logo_Joie_des_Papilles.png" alt="Logo Joie des Papilles">
+                    </a>
+                    <a class="brand color-brand1" href="{{ path('home')}}">
+                    <span class="white">Joie des Papilles</span></a>
+                </div>
+
+
+
+                {# <!-- RECHERCHE id="form" --> #}
+
+                    {{ render(controller('App\\Controller\\Customer\\SearchController::searchBar')) }}
+
+                {# <!-- RECHERCHE --> #}
+
+                
+
+               
+                {% if app.user %}
+
+                {# {% if app.user.roles[0] is same as "ROLE_ADMIN" %} #}
+                {% if is_granted("ROLE_ADMIN") %}
+
+                    <div class="connexion">
+                        <a class="se-connecter" href="{{path('admin')}}"><i class="fa-solid fa-user-tie"></i>ADMINISTRATION</a>
+                    </div>
+
+                {% endif %}
+
+                <div class="connexion">              
+                   
+                    <a class="se-connecter" href="{{ path('app_logout') }}"><i class="fas fa-user"></i>SE DECONNECTER</a>
+
+                </div>
+
+                <div class="connexion">
+
+                    <p class="bonjour">Bonjour, {{( app.user.FirstName)}} !</p>
+
+                    <a class="se-connecter" href="{{path('profile')}}"><i class="fa-solid fa-address-card"></i></i>MON COMPTE</a>
+                </div>
+
+                {% else %}
+
+                    <div class="connexion">
+                        <a class="se-connecter" href="{{path('app_login')}}"><i class="fas fa-user"></i>SE CONNECTER</a>
+                    </div>
+
+                {% endif %}
+
+                <div class="connexion">
+                    <a class="se-connecter" href="{{ path('cart_detail') }}"><i class="fa-solid fa-basket-shopping"></i>MON PANIER</a>
+                </div>
+
+                {# <!-- MENU RESPONSIVE --> #}
+
+                <nav class="navbarResp">
+                    <div class="navbar-container">
+                        <input type="checkbox">
+
+                        <div class="hamburger-lines">
+                            <span class="line line1"></span>
+                            <span class="line line2"></span>
+                            <span class="line line3"></span>
+                        </div>
+
+                        <ul class="ul1">
+
+                            {% if app.user %}
+
+                            <li>
+                                <a class="se-connecter">Bonjour, {{( app.user.FirstName)}} !</a>
+                            </li>
+
+                            {% endif %}
+
+                            <li>
+                                <a class="menu home" href="{{ path('home')}}"><i class="fas fa-home"></i></a>
+                            </li>
+
+                            <li>
+                                <a class="menu" href="{{ path('recipe_salty')}}">Recettes salées</a>
+                            </li>
+
+                            <li>
+                                <a class="menu" href="{{ path('recipe_sweet')}}">Recettes sucrées</a>
+                            </li>
+
+                            {# <li>
+                                <a class="menu" href="{{ path('kitchen_trick')}}">Astuces de cuisine</a>
+                            </li>
+
+                            <li>
+                                <a class="menu" href="{{ path('nutrition_tip')}}">Conseils nutrition</a>
+                            </li>
+
+                            <li>
+                                <a class="menu" href="{{ path('blog')}}">Blog</a>
+                            </li> #}
+
+                            <li>
+                                <a class="menu" href="{{ path('ecommerce')}}">Boutique</a>
+                            </li>
+
+                            {% if app.user %}
+
+                            {# {% if app.user.roles[0] is same as "ROLE_ADMIN" %} #}
+                            {% if is_granted("ROLE_ADMIN") %}
+
+                            <li>
+                                <a class="se-connecter" href="{{path('admin')}}"><i class="fa-solid fa-user-tie"></i>Administration</a>
+                            </li>
+
+                            {% endif %}
+
+                            <li>                                 
+                                <a class="se-connecter" href="{{ path('app_logout') }}"><i class="fas fa-user"></i>Se déconnecter</a>
+                            </li>                           
+
+                            <li>
+                                <a class="se-connecter" href="{{path('profile')}}"><i class="fa-solid fa-address-card"></i></i>Mon compte</a>
+                            </li>
+
+                            {% else %}
+
+                            <li>
+                                <a class="se-connecter" href="{{path('app_login')}}"><i class="fas fa-user"></i>Se connecter</a>
+                            </li>
+
+                            {% endif %}
+
+                            <li>
+                                <a class="se-connecter" href="{{ path('cart_detail') }}"><i class="fa-solid fa-basket-shopping"></i>Mon panier</a>
+                            </li>
+
+                            <li>
+                                <a class="se-connecter" href="{{path('contact')}}"><i class="fas fa-envelope"></i>Nous Contacter</a>
+                            </li>
+
+                        </ul>                
+                    </div>
+                </nav>
+
+                {# <!-- FIN MENU RESPONSIVE --> #}
+
+            </div>
+        </div>
+
+
+
+        {# <!-- NAVBAR - MENU DESKTOP --> #}
+
+        <div class="fond">
+
+            <nav class="container navbar">
+
+                <ul class="menuNav">
+        
+                    <li>
+                        <a class="menu home {% if (app.request.pathInfo == path('home')) %} active {% endif %}" href="{{ path('home')}}">Accueil</a>
+                    </li>
+                    <li>
+                        <a class="menu {% if (app.request.pathInfo == path('recipe_salty')) %} active {% endif %}" href="{{ path('recipe_salty')}}">Recettes salées</a>
+                    </li>
+                    <li>
+                        <a class="menu {% if (app.request.pathInfo == path('recipe_sweet')) %} active {% endif %}" href="{{ path('recipe_sweet')}}">Recettes sucrées</a>
+                    </li>
+                    <li>
+                        <a class="menu {% if (app.request.pathInfo == path('kitchen_trick')) %} active {% endif %}" href="{{ path('kitchen_trick')}}">Astuces de cuisine</a>
+                    </li>
+                    <li>
+                        <a class="menu {% if (app.request.pathInfo == path('nutrition_tip')) %} active {% endif %}" href="{{ path('nutrition_tip')}}">Conseils nutrition</a>
+                    </li>
+                    <li>
+                        <a class="menu {% if (app.request.pathInfo == path('blog')) %} active {% endif %}" href="{{ path('blog')}}">Blog</a>
+                    </li>
+                    <li>
+                        <a class="menu {% if (app.request.pathInfo == path('ecommerce')) %} active {% endif %}" href="{{ path('ecommerce')}}">Boutique</a>
+                    </li>
+                </ul>
+
+                {# <!-- RECHERCHE responsive--> #}
+                {# <div id="form">
+
+                    {{ render(controller('App\\Controller\\Customer\\SearchController::searchBar')) }}
+
+                </div> #}
+                {# <!-- RECHERCHE --> #}
+            </nav>         
+        </div>
+    {# <!-- FIN NAVBAR  --> #}
+</header>

@@ -1,0 +1,67 @@
+ {% extends "customer/base.html.twig" %}
+
+{% block title %}Recettes Sucrées{% endblock %}
+
+{% block body %}
+
+<!-- MAIN -->
+
+    <main id="main">
+
+        <!-- SECTION 2 DESCRIPTION-->
+
+        <section id="description">
+
+            <div class="accueil">
+
+                <div class="presentation">
+
+                    <h1 class="title">Vous prendrez bien une petite douceur ?</h1>
+                    <p class="intro">Pour le dessert ou le goûter, voici les petits plaisirs sucrés !</p>
+                </div>
+
+                {{ knp_pagination_render(recipes) }}
+
+                <div class="row">
+
+                    {% for recipe in recipes %}
+
+                        <!-- Col 1 -->
+                        <div class="col-3 item sell">
+
+                            <a class="" href="{{ path('recipe_sweet_one',{'id' : recipe.id})}}">
+                                <img class="image-home" src="{{recipe.image}}" alt="{{recipe.name}}">
+                                <h3 class="recipe">{{recipe.name}}</h3>
+                                <p class="dscpt">Catégorie : {{recipe.category.name}}</p>
+                            </a>
+
+                            <div class="detail">
+                                    <p><img class="chef" src="/images/chef.png" alt="">{{recipe.difficulty}}</p>
+                                    <p><i class="chef fa-regular fa-clock"></i><br>{{recipe.duration}}</p>
+                                    <p><i class="chef fas fa-utensils"></i><br>{{recipe.portion}}</p>
+
+                                   
+                                    {% if recipe.vegetarian is same as true %}
+                                     
+                                    <p class="veg"><i class="chef fas fa-leaf veg"></i><br>végétarien</p>
+
+                                    {% endif %}
+                                </div>
+                        
+                        </div>
+                    {% endfor %}
+                </div> <!-- row -->
+
+                {{ knp_pagination_render(recipes) }}
+
+            </div> <!-- container -->
+
+        </section>
+        <!-- FIN SECTION 2 DESCRIPTION -->
+
+    </main>
+    <!-- FIN MAIN -->
+
+
+
+{% endblock %}

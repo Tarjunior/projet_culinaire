@@ -1,0 +1,56 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title %}Recettes{% endblock %}
+
+{% block body %}
+
+    <main>
+        <section id="description">
+
+
+            <div class="row">
+
+                <div class="presentation">
+
+                    <h1 class="title-cat">Gestion des recettes</h1>
+                    {% include "_messages_flash.html.twig" %}
+                    
+                    <p class="intro"></p>
+                     <div class="btnshow btn-ajouter">
+                        <a href="{{ path('admin_recipe_new') }}" class="btneye"><i class="fas fa-plus"></i> Ajouter</a>
+                    </div> 
+
+                    {{ knp_pagination_render(recipes) }}
+
+                </div>
+
+                <!-- Col 1 -->
+                {% for recipe in recipes %}
+                    <div class="col-3 item sell">
+
+                        <div class="imsell" href="">
+                            <h4 class="h4-cat">{{ recipe.name }}</h4>
+                            <img class="image-home" src="{{ recipe.image }}" alt="Image catégorie">
+                        </div>
+                            <div class="btn-admin">
+                                <a href="{{ path('admin_recipe_edit',{ 'id' : recipe.id } ) }}" class="btn-category"><i class="fa-solid fa-pen"></i> Modifier</a>
+                            </div>
+                            <div class="btn-admin">
+                                <a href="{{ path('admin_recipe_show',{ 'id' : recipe.id } ) }}" class="btn-category"><i class="fa-solid fa-eye"></i> Consulter</a>
+                            </div>
+                        {# <div class="btnshow">
+                            <a href="produit.html" class="btneye"><i class="fas fa-eye"></i> Consulter</a>
+                        </div>               #}
+                    </div>
+                {% endfor %}              
+
+            </div> <!-- row -->
+
+            {{ knp_pagination_render(recipes) }}
+
+        </section>
+        <!-- FIN SECTION 2 DESCRIPTION -->
+
+    </main>
+    <!-- FIN MAIN -->
+{% endblock %}

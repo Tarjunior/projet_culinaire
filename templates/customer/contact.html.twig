@@ -1,0 +1,30 @@
+{% extends "customer/base.html.twig" %}
+
+{% block body %}
+
+<main id="main">
+    <section class="login col-6">
+        
+        <h1 class="h3">Prendre contact avec nous</h1>
+
+        <div class="alertBoutique">
+            {% include "_messages_flash.html.twig" %}            
+        </div>
+                        
+        <div class="login-form"> 
+                        
+            <div class="create" >
+
+                {{ form_start(form) }}
+
+                {{ form_widget(form) }}
+                     
+                <button class="btn-form">Envoyer</button>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</main> 
+
+{% endblock %}

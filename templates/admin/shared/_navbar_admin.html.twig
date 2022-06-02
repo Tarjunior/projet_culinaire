@@ -1,0 +1,123 @@
+<header id="header-admin">
+
+        <div class="navAdmin">
+
+         <!-- MENU DESKTOP -->
+
+            <nav class="">
+
+                <ul class="nav-admin">
+                    <li>
+                        <a class="menu-admin {% if (app.request.pathInfo == path('admin')) %} active {% endif %}" href="{{ path('admin')}}">ADMINISTRATION</a>
+                    </li>
+                    <li>
+                        <a class="menu-admin" href="{{ path('home')}}"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li>
+                        <a class="menu-admin" href="{{ path('app_logout')}}"><i class="fa-solid fa-power-off"></i></a>
+                    </li>
+                    <li>
+                        <a class="menu-admin {% if (app.request.pathInfo == path('admin_category_index')) %} active {% endif %}" href="{{ path('admin_category_index') }}">Catégories</a>
+                    </li>
+                    <li>
+                        <a class="menu-admin {% if (app.request.pathInfo == path('admin_recipe_index')) %} active {% endif %}" href="{{ path('admin_recipe_index') }}">Recettes</a>
+                    </li>
+                    {# <li>
+                        <a class="menu-admin" href="#">Recettes sucrées</a>
+                    </li> #}
+                    <li>
+                        <a class="menu-admin" href="#!">Astuces de cuisine</a>
+                    </li>
+                    <li>
+                        <a class="menu-admin" href="#!">Conseils nutrition</a>
+                    </li>
+                    <li>
+                        <a class="menu-admin" href="#!">Posts</a>
+                    </li>
+                    <li>
+                        <a class="menu-admin {% if (app.request.pathInfo == path('admin_product_index')) %} active {% endif %}" href="{{ path('admin_product_index')}}">Produits</a>
+                    </li>
+                
+                    {# <!-- RECHERCHE id="form" --> #}
+
+                    {{ render(controller('App\\Controller\\Admin\\SearchAdmController::searchBarAdm')) }}
+
+                    {# <!-- RECHERCHE --> #}
+
+                </ul>
+                
+            </nav>
+
+            <nav class="navbarResp navADM">
+
+                <div class="gestionAdm">
+                    <h4><a href="{{ path('admin')}}">ADMINISTRATION</a></h4>
+                </div>
+            
+                <div class="navbar-container">
+                    <input type="checkbox">
+
+                    <div class="hamburger-lines">
+                        <span class="line line1"></span>
+                        <span class="line line2"></span>
+                        <span class="line line3"></span>
+
+                    </div>
+
+                    {# <!-- RECHERCHE id="form" --> #}
+
+                    {{ render(controller('App\\Controller\\Admin\\SearchAdmController::searchBarAdm')) }}
+
+                    {# <!-- RECHERCHE --> #}
+
+                             
+
+                    <ul class="ul1 ul1-admin">
+
+                        <li>
+                            <a class="menuAdm" href="{{ path('admin')}}">ADMINISTRATION</a>
+                        </li>
+
+                        <li>
+                            <a class="menuAdm" href="{{ path('home')}}"><i class="fas fa-home"></i></a>
+                        </li>
+
+                        <li>
+                            <a class="menuAdm" href="{{ path('app_logout')}}">Logout</a>
+                        </li>
+
+                        <li>
+                            <a class="menuAdm" href="{{ path('admin_category_index') }}">Catégories</a>
+                        </li>
+
+                        <li>
+                            <a class="menuAdm" href="{{ path('admin_recipe_index') }}">Recettes</a>
+                        </li>
+
+                        {# <li>
+                            <a class="menuAdm" href="#!">Astuces de cuisine</a>
+                        </li>
+
+                        <li>
+                            <a class="menuAdm" href="#!">Conseils nutrition</a>
+                        </li>
+
+                        <li>
+                            <a class="menuAdm" href="#!">Conseils nutrition</a>
+                        </li>
+
+                        <li>
+                            <a class="menuAdm" href="#!">Posts</a>
+                        </li> #}
+
+                        <li>
+                            <a class="menuAdm" href="{{ path('admin_product_index')}}">Produits</a>
+                        </li>
+                    </ul>                
+                </div>
+            </nav>
+            
+        </div>
+    <!-- FIN NAVBAR  -->
+
+</header>

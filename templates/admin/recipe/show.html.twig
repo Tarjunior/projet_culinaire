@@ -1,0 +1,85 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title %}Recette{% endblock %}
+
+{% block body %}
+    
+ <!-- MAIN -->
+    <main id="">
+
+        <!-- PAGE RECETTE SALEE -->
+
+        <section id="description">
+
+            <div class="presentation d-recipe">
+
+                <div class="retour">
+                    <a href="{{ path('admin_recipe_index') }}" class="">Retour à la liste</a>
+                </div>
+
+
+                <!-- Photo présentation recette -->
+                <div class="box-recette">
+                    <img class="recette admRecette" src="{{recipe.image}}" alt="">
+                </div>
+
+                <!--  -->
+                <div class="info-recette">
+                    <h1>{{recipe.name}}</h1>
+                  
+                </div>
+
+                <div class="box-icon">
+                    <p><img class="chefe" src="/images/chef.png" alt="">{{recipe.difficulty}}</p>
+                    <p><i class="chefe fa-regular fa-clock"></i><br>{{recipe.duration}}</p>
+                    <p><i class="chefe fas fa-utensils"></i><br>{{recipe.portion}}</p>
+
+                   
+                    {% if recipe.vegetarian is same as true %}
+
+                    <p class="veg"><i class=" chefe fas fa-leaf"></i><br>végétarien</p>
+
+                    {% endif %}
+                </div>
+
+                <div class="recipeInfo">{{recipe.presentation | raw}}</div>
+
+                <div class="box-preparation">
+                    <div class="page-rsel box-number ">
+
+                        <div class="prepa">
+                            <h2 class="h2-prepa">Ingrédients</h2>
+                        </div>
+
+                        <div class="box-ingredients text-format">
+                         {{recipe.ingredient | raw}}  
+                        </div>
+                    </div>
+                    
+                    <div class="page-rsel etapes-recette">
+                        <div class="prepa">
+                            <h2 class="h2-prepa">Préparation</h2>
+                            <div class="box-ingredients text-format">
+                              {{recipe.preparation | raw}}
+                            </div>
+                            <br>
+                            <p><strong>Régalez-vous !</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn1">
+                    <a href="{{ path('admin_recipe_edit',{ 'id' : recipe.id } ) }}" class="btn-form">Modifier</a>
+                    {{include('admin/recipe/_delete_form.html.twig') }}
+                </div>
+            </div>
+        </section>
+        <!-- FIN PAGE RECETTE SALEE -->
+               
+
+    </main>
+    <!-- FIN MAIN -->
+    
+   
+
+    
+{% endblock %}

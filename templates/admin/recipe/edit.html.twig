@@ -1,0 +1,30 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title %}Modification de la Recette{% endblock %}
+
+{% block body %}
+
+<main id="main">
+    <section class="adminForm">
+
+        <div class="form-cate">
+    
+            <div class="retour">
+                <a href="{{ path('admin_recipe_index') }}" class="">Retour à la liste</a>
+            </div>
+       
+            <div class="">
+                <div class="">
+                    <h1 class="h1catadmin">Modifier la recette</h1>
+                </div>
+                <div id="cate-form">
+                      {{ include('admin/recipe/_form.html.twig', {'button_label': 'Update'}) }}
+                      {{ include('admin/recipe/_delete_form.html.twig') }}
+                </div>              
+            </div>
+        </div>
+    </section>
+</main> 
+
+{% endblock %}
+

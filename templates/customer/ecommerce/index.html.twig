@@ -1,0 +1,67 @@
+ {% extends "customer/base.html.twig" %}
+
+{% block title %}Boutique{% endblock %}
+
+{% block body %}
+
+    <main id="main">
+
+        <section id="description">
+
+
+            <div class="accueil">
+
+                <div class="presentation">
+
+                    <h1 class="title">Il te manque une épice ? Un petit oubli dans tes courses ? Viens voir, j'ai sûrement ce qu'il te faut. </h1>
+                    <p class="intro">Trouve ici les épices pour réaliser tes recettes simples et saines</p>
+                </div>
+
+                <div class="alertBoutique">
+                    {% include "_messages_flash.html.twig" %}
+                </div> 
+
+                
+                    {{ knp_pagination_render(products) }}
+                
+                
+                    <!-- Col 1 -->
+                <div class="row">    
+                   
+                    {% for product in products %}
+
+                        <div class="col-3 item sell">
+
+                            <div class="imsell" href="">
+                                <img class="image-home" src="{{product.image}}" alt="{{product.name}}">
+                                <h4 class="h4-cat">{{product.name}}</h4>
+                            </div>
+                            <div class="card-footer">
+                                    <p class="dscpt">Description : {{product.description}}</p>
+                                    <p>Catégorie : {{ product.category.name }}</p>
+                                    <p>Prix : {{product.price | priceFormatEuro}}</p>
+                            </div>
+                            <div class="btnshow">
+                                <a href="{{path('ecommerce_product',{'id' : product.id})}}" class="btneye"><i class="fas fa-eye"></i> Consulter</a>
+                            </div>
+                        </div>
+
+                    {% endfor %}   
+
+                </div>
+
+                
+                    {{ knp_pagination_render(products)}}
+                
+
+                
+
+            </div> <!-- row -->
+
+        </section>
+            <!-- FIN SECTION 2 DESCRIPTION -->
+
+    </main>
+    <!-- FIN MAIN -->
+
+{% endblock %}

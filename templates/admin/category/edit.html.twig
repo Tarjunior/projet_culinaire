@@ -1,0 +1,30 @@
+{% extends "admin/base_admin.html.twig" %}
+
+{% block title %}Modification de Catégorie{% endblock %}
+
+{% block body %}
+
+<main id="main">
+    <section class="adminForm">
+
+        <div class="form-cate">
+    
+            <div class="retour">
+                <a href="{{ path('admin_category_index') }}" class="">Retour à la liste</a>
+            </div>
+       
+            <div class="">
+                <div class="">
+                    <h1 class="h1catadmin">Modifier la Catégorie</h1>
+                </div>
+                <div id="cate-form">
+                      {{ include('admin/category/_form.html.twig', {'button_label': 'Update'}) }}
+                      {{ include('admin/category/_delete_form.html.twig') }}
+                </div>              
+            </div>
+        </div>
+    </section>
+</main> 
+
+{% endblock %}
+

@@ -1,0 +1,25 @@
+{% extends "customer/base.html.twig" %}
+
+{% block title %}Mot de passe oublié{% endblock %}
+
+{% block body %}
+
+    <main id="main">
+        <section class="login col-6">
+
+            <h1 class="h3">Mot de passe oublié</h1>
+
+            <div id="login-form">
+                <div class="create">
+
+                {{form_start(form)}}
+                    {{form_errors(form.email)}}
+                {{form_row(form.email)}}
+
+                <button type="submit" class="btn-form">Envoyer</button>
+                {{form_end(form)}}
+            </div>
+        </section>  
+     </main>       
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% extends "customer/base.html.twig" %}
+
+{% block title %}Recherche{% endblock %}
+  
+{% block body %}
+
+    <main id="main" class="tkpage">
+        <section id="description">
+            <div class="accueil">
+                <div class="presentation">
+
+                    {% if app.request.method == 'POST' %}
+                        
+                        {% if recipes | length == 0  and products | length == 0 %}
+
+                            <h4 class="mtop">Aucun résultat pour votre recherche.</h4>
+
+                            {% else %}
+
+                            <h1 class="title">Vos résultats de recherche</h3>
+
+                            <div class="row">
+                                {% for recipe in recipes %}
+
+                                    <div class="col-3 item sell">
+
+                                        <a class="" href="{{ path('recipe_salty_one',{'id' : recipe.id})}}">
+                                            <img class="image-home" src="{{recipe.image}}" alt="">
+                                            <h3 class="recipe">{{recipe.name}}</h3>
+                                            <p class="dscpt">Catégorie : {{recipe.category.name}}</p>
+                                        </a>
+                                        <div class="detail">
+                                            <p><img class="chef" src="/images/chef.png" alt="">{{recipe.difficulty}}</p>
+                                            <p><i class="chef fa-regular fa-clock"></i><br>{{recipe.duration}}</p>
+                                            <p><i class="chef fas fa-utensils"></i><br>{{recipe.portion}}</p>
+
+                                            {# {% if recipe.name is same as '% *' %}
+
+                                            <p><i class="chef fas fa-child"></i><br>Convient</p>
+
+                                            {% endif %} #}
+
+                                            {% if recipe.vegetarian is same as true %}
+                                     
+                                                
+                                            <p class="veg"><i class="chef fas fa-leaf veg"></i><br>végétarien</p>
+
+                                            {% endif %}
+                                            {# <p><a href="{{ path('recipe_salty_one',{'id' : recipe.id})}}" class="btneye" alt="Vas-y!"><i class="chef fas fa-eye"></i></a><br>Je Regarde</p>                         #}
+                                        </div>  
+                                    </div>
+                                {% endfor %}
+
+                                {% for product in products %}
+
+                                    <div class="col-3 item sell">
+
+                                        <div class="imsell" href="">
+                                            <img class="image-home" src="{{product.image}}" alt="Image catégorie">
+                                            <h4 class="h4-cat">{{product.name}}</h4>
+                                        </div>
+                                        <div class="card-footer">
+                                                <p class="dscpt">Déscription : {{product.description}}</p>
+                                                <p>Catégorie : {{ product.category.name }}</p>
+                                                <p>Prix : {{product.price | priceFormatEuro}}</p>
+                                        </div>
+                                        <div class="btnshow">
+                                            <a href="{{path('ecommerce_product',{'id' : product.id})}}" class="btneye"><i class="fas fa-eye"></i> Consulter</a>
+                                        </div>
+                                    </div>
+
+                                {% endfor %}
+                                        
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </section>   
+    </main>
+{% endblock %}
+  

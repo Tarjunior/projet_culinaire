@@ -1,0 +1,43 @@
+ {% extends "customer/base.html.twig" %}
+
+{% block title %}Produit{% endblock %}
+
+{% block body %}
+
+     <!-- MAIN -->
+    <main id="main">
+
+        <!-- PAGE PRODUIT -->
+
+        <section id="description">
+           
+                <div class="row gap">
+
+
+                    <div class="col-6 pdct">
+                        <img class="image-sell" src="{{ product.image }}" alt="{{product.name}}">             
+                    </div>
+
+                    <div class="col-5 sell basket ">
+                        <div>
+                            <h4 class="h4-cat">{{ product.name }}</h4>
+                            <p class="dscpt">Description : {{product.description}}</p>
+                            <p>Prix : {{ product.price | priceFormatEuro }}</p>
+                            </p>
+                        </div>
+
+                        <div class="btnshow">
+                            <a href="{{ path('cart_add',{'id': product.id}) }}" class="btneye"><i class="fas fa-shopping-bag"></i> Ajouter au panier</a>
+                        </div>
+                    </div>
+
+                </div> <!-- row -->
+            
+
+        </section>
+       <!-- FIN PAGE PRODUIT -->
+
+    </main>
+    <!-- FIN MAIN -->
+
+{% endblock %}

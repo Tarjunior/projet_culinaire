@@ -1,0 +1,195 @@
+{% extends "customer/base.html.twig" %}
+
+{% block title %}Joie-des-Papilles{% endblock %}
+
+{% block body %}
+
+   <!-- MAIN -->
+
+    <main id="main">
+
+        <!-- SECTION 1 IMAGE -->
+
+        <div class="image">
+
+            <div class="text">
+                {# <h1>Bienvenue!</h1>
+                <p><a href="#!">Recettes</a></p> #}
+            </div>
+
+        </div>
+        <!-- FIN SECTION 1 IMAGE -->
+
+        <!-- SECTION 2 DESCRIPTION-->
+
+        <section id="description">
+
+            <div class="accueil">
+
+                <div class="presentation">
+
+                    <h1 class="title">Hey ! Bienvenue !</h1> <br>
+                
+                    <p class="intro">Hey toi ! Oui oui, toi ! Tu es arrivé au bon endroit, tu as fait le plus difficile, bravo ! Es tu prêt à te régaler avec des recettes faciles et saines ? Fouille, tu devrais trouver ton bonheur. Les recettes sont triées selon qu'elles soient sucrées ou salées, et tu y trouveras même des astuces et des conseils de cuisine ! À toi de jouer maintenant. <br> 
+                    <span class="intro2">Bonne visite !</span></p>
+                    
+                    <h2>Nouvelles Recettes Salées</h2>
+                </div>
+
+                
+
+                <div class="row">
+
+                    {% for recipe in saltyRecipes %}
+                    
+                        <!-- Col 1 -->
+                        <div class="col-3 item">
+                            <a class="first" href="{{ path('recipe_salty_one',{'id' : recipe.id})}}">
+                                <img class="image-home" src="{{recipe.image}}" alt="{{recipe.name}}">
+                                <h3 class="recipe">{{recipe.name}}</h3>
+                                <br>
+                                <p class="dscpt">Catégorie : {{recipe.category.name}}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          ">
+
+                <div class="presentation">
+                    <h2>Nouvelles Recettes Sucrées</h2>
+                </div>
+
+
+                <div class="row">        
+
+                    {% for recipe in sweetRecipes %}
+                    <!-- Col 1 -->
+                    
+                        <div class="col-3 item">
+                            <a class="first" href="{{ path('recipe_sweet_one',{'id' : recipe.id})}}">
+                                <img class="image-home" src="{{recipe.image}}" alt="{{recipe.name}}">
+                                <h3 class="recipe">{{recipe.name}}</h3>
+                                <br>
+                                <p class="dscpt">Catégorie : {{recipe.category.name}}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+
+            <div class="accueil">
+
+                <div class="presentation">
+                    <h2>Nouveaux Produits</h2>
+                </div>
+
+
+                <div class="row"> 
+
+                  {% for product in products %}
+                    <!-- Col 2 -->
+                    <div class="col-3 item">
+                        <a class="first" href="{{ path('ecommerce_product',{'id' : product.id})}}">
+                            <img class="image-home" src="{{product.image}}" alt="{{product.name}}">
+                            <h3 class="recipe">{{product.name}}</h3>
+                            <br>
+                            <p class="dscpt">Catégorie : {{product.category.name}}</p>
+                        </a>
+                    </div>
+                  {% endfor %}
+                </div>
+            </div>
+
+
+            {# <div class="accueil">
+
+                <div class="presentation">
+                    <h2>Nouvelles Astuces</h2>
+                </div>
+
+
+                <div class="row"> 
+
+                    <!-- Col 3 -->
+                    <div class="col-3 item">
+                        <a class="first" href="#">
+                            <img class="image-home" src="https://images.unsplash.com/photo-1556911220-bff31c812dba?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=968&q=80" alt="">
+                            <h3 class="recipe">Nouvelles Astuces</h3>
+                            <br>
+                            <p class="dscpt">Catégorie : It's very easy to start creating
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>  
+
+
+            <div class="accueil">
+
+                <div class="presentation">
+                    <h2>Nouveaux Conseils</h2>
+                </div>
+
+
+                <div class="row"> 
+
+                    <!-- Col 3 -->
+                    <div class="col-3 item">
+                        <a class="first" href="">
+                            <img class="image-home" src="https://images.unsplash.com/photo-1542010589005-d1eacc3918f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=892&q=80" alt="">
+                            <h3 class="recipe">Nouveau Conseil</h3>
+                            <br>
+                            <p class="dscpt">Catégorie : It's very easy to start creating
+                            </p>
+                        </a>
+                    </div>
+                </div>
+            </div>  
+
+
+            <div class="accueil">
+
+                <div class="presentation">
+                    <h2>Nouveaux Articles</h2>
+                </div>
+
+
+                <div class="row"> 
+                    <!-- Col 4 -->
+                    <div class="col-3 item">
+                        <a class="first" href="">
+                            <img class="image-home" src="https://images.unsplash.com/photo-1485498128961-422168ba5f87?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80" alt="">
+                            <h3 class="recipe">Nouvel Article</h3>
+                            <br>
+                            <p class="dscpt">Catégorie : It's very easy to start creating
+                            </p>
+                        </a>
+                    </div>
+
+                </div> <!-- row -->
+            </div> #}
+
+
+                {# <div class="end">
+                    <p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, voluptatum
+                        consectetur eaque magni sapiente,
+                        asperiores non quos recusandae similique tempora modi molestias voluptates inventore fugiat
+                        saepe! Illum saepe
+                        ipsa nam perferendis minima tempora architecto eaque temporibus. Vel, architecto molestias
+                        blanditiis minus iste
+                        eius facilis assumenda maiores tempore, ad deleniti nobis.</p>
+                </div> #}
+
+            {# </div> <!-- container --> #}
+
+        </section>
+        <!-- FIN SECTION 2 DESCRIPTION -->
+
+    </main>
+    <!-- FIN MAIN -->
+
+{% endblock %}

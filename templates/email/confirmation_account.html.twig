@@ -1,0 +1,9 @@
+<p>Bonjour, {{user.FirstName}} ! Veuillez confirmer votre email. <br>
+
+S'il vous plaît, cliquez sur le lien ci-dessous :<br>
+<br>
+<a href={{ url('app_confirm_email',{'token': emailCustomer.getTokenConfirmationEmail()}) }}>Confirmer mon compte</a> <br>
+<br>
+Bien cordialement <br>
+Joie des Papilles
+</p>

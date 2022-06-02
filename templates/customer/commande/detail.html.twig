@@ -1,0 +1,144 @@
+{% extends "customer/base.html.twig" %}
+
+{% block body %}
+
+<main id="main">
+    <section id="description">
+
+        <div class="row">
+            
+
+            <div class="presentation">
+                <h3 class="">
+                   Commande #{{ commandShop.id }}
+                </h3>
+
+                <div class="alertPanRespon">
+                    {% include "_messages_flash.html.twig" %}
+                </div>
+            </div>
+
+            
+            <div class="panier col-8">
+
+                <div class="table">
+                    <div class="">
+                            <div class="smart">
+                            
+                                <table class="lignes">
+                                    <thead class="">
+                                        <div class="border-panier">
+                                            <tr>
+                                            
+                                                <th class="cellule" scope="col">Produit</th>
+                                                <th class="cellule" scope="col">P.U</th>
+                                                <th class="cellule" scope="col" >Qté</th>
+                                                <th class="cellule cell" scope="col">Total</th>
+                                                
+                                            </tr>
+                                        </div>
+                                       
+                                    </thead>
+                                        
+                                    <tbody>
+                                  
+                                        {% for item in commandShop.commandShopLines %}
+                                        
+                                            <tr>
+                                                <td>                                               
+                                                    <div class="info-panier">
+                                                        <a href="{{path('ecommerce_product',{'id' : item.product.id})}}"><img src=" {{ item.product.image }}" alt="{{ item.product.name }}" class="imageProductCart"></a> 
+                                                        <div class="info-panier2">
+                                                            <p class="p-name">{{ item.product.name }}</p>
+                                                            <p class="p-description">{{ item.product.description }}</p>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                
+                                                <td>{{ item.product.price | priceFormatEuro }}</td>
+                                                <td>
+                                                <div class="QTY">
+                                                   
+                                                    <button class="">{{ item.quantity }}</button>
+                                                    
+                                                    </div>
+                                                </td>
+                                                <td>{{ item.total | priceFormatEuro }}</td>
+                                            </tr>
+                                        {% endfor %}
+
+                                        <div class="sous-total">
+                                            <tr>
+                                                <th colspan="2"></th>
+                                                
+                                                    <th class="sous-total"><strong>Sous Total</strong></th>
+                                                
+                                                <th><strong>{{ commandShop.totalPrice | priceFormatEuro }}</strong></th>
+                                            </tr>
+                                        </div>
+                                        <div class="">
+                                            {% if commandShop.isPayed is same as false %}
+                                                <span class="text-secondary">Non payée</span>
+                                            {% else %}
+                                                    <span class="text-success">Payée</span>
+                                            {% endif %}
+                                        </div>
+                                    </tbody>
+                                    
+                                </table>
+                            </div>
+                    </div>
+                     
+                </div>
+
+                
+            </div> 
+        </div>
+    </section>
+
+
+    {# <div class=""> #}
+    <section class="recapPanier">
+        <div class="recaP form-cate col-8">
+            <div class="card-header">
+                <h4 class="h3">Adresse de livraison</h4>
+            </div>
+            <div class="">
+                <p class="manger"><strong>Pays :</strong> {{ commandShop.deliveryAddress.country }}</p>
+                <p class="manger"><strong>Ville :</strong> {{ commandShop.deliveryAddress.city }}</p>
+                <p class="manger"><strong>Code Postal :</strong> {{ commandShop.deliveryAddress.postalCode }}</p>
+                <p class="manger"><strong>Libellé :</strong> {{ commandShop.deliveryAddress.address }}</p>
+                <br>
+
+            </div>
+
+            <div class="retour">
+                <a href="{{ path('command_shop_list') }}" class="">Revenir aux commandes</a>
+            </div>
+        </div>
+
+    </section>
+    
+    {# <section class="recapPanier">
+
+        <div class="form-cate col-6">                          
+                                                                    
+            <div class="">
+                <div class="">
+                    <h1 class="h1catadmin">Adresse de livraison</h1>
+                </div>
+                <div id="cate-form">
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <button type="submit" class="btn-valider" id="buttonSubmit">Valider l'adresse et payer la commande</button>
+
+                    {{ form_end(form) }}
+
+                </div>              
+            </div>
+        </div>
+    </section> #}
+
+</main>
+
+{% endblock %}

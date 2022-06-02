@@ -1,0 +1,53 @@
+ {% extends "customer/base.html.twig" %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+
+ <!-- MAIN -->
+
+    <main id="main">
+
+        <!-- PAGE D'INSCRIPTION' -->
+
+        <section class="login col-5">
+
+            <h1 class="h3">Créez votre compte</h1>
+            <p class="inscription">Vous avez déjà un compte ? <a class="lien-login" href="{{path('app_login')}}">Connectez-vous !</a></p>
+
+            {% include "_messages_flash.html.twig" %}
+            
+            <div id="login-form">
+
+                {# <p class="titre"><span class="size"></span></p> #}
+
+                <div class="create">
+
+                    {{ form_start(registrationForm) }}
+                        {{ form_row(registrationForm.first_name) }}
+                        {{ form_row(registrationForm.last_name) }}
+                        {{ form_row(registrationForm.email) }}
+                        {{ form_row(registrationForm.plainPassword.first) }}
+                        {{ form_row(registrationForm.plainPassword.second) }}
+                        {{ form_row(registrationForm.agreeTerms) }}
+                        
+                        {# {{ form_widget(registrationForm) }} #}
+
+                    <button type="submit" class="btn-form">S'inscrire</button>
+                    {{ form_end(registrationForm) }}
+
+
+                </div>            
+
+            </div>
+
+        </section>
+        
+        <!-- FIN PAGE DE CONNEXION -->
+
+    </main>
+   
+
+    <!-- FIN MAIN -->
+
+{% endblock %}
