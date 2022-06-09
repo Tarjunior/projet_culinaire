@@ -10,16 +10,16 @@
         <div class="form-cate">
     
             <div class="retour">
-                <a href="{{ path('admin_recipe_index') }}" class="">Retour à la liste</a>
+                <a href="{{ path('admin_recipe_index') }}" class=""><i class="fa-solid fa-arrow-left"></i> Retour à la liste</a>
             </div>
        
-            <div class="">
-                <div class="">
+            <div class="col-12">
+                <div class="col-12">
                     <h1 class="h1catadmin">Modifier la recette</h1>
                 </div>
                 <div id="cate-form">
-                      {{ include('admin/recipe/_form.html.twig', {'button_label': 'Update'}) }}
-                      {{ include('admin/recipe/_delete_form.html.twig') }}
+                      <div>{{ include('admin/recipe/_form.html.twig', {'button_label': 'Update'}) }}</div>
+                      <div>{{ include('admin/recipe/_delete_form.html.twig') }}</div>
                 </div>              
             </div>
         </div>

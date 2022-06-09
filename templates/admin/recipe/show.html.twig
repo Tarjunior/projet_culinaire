@@ -14,7 +14,7 @@
             <div class="presentation d-recipe">
 
                 <div class="retour">
-                    <a href="{{ path('admin_recipe_index') }}" class="">Retour à la liste</a>
+                    <a href="{{ path('admin_recipe_index') }}" class=""><i class="fa-solid fa-arrow-left"></i> Retour à la liste</a>
                 </div>
 
 
@@ -68,8 +68,8 @@
                     </div>
                 </div>
                 <div class="btn1">
-                    <a href="{{ path('admin_recipe_edit',{ 'id' : recipe.id } ) }}" class="btn-form">Modifier</a>
-                    {{include('admin/recipe/_delete_form.html.twig') }}
+                    <div class="btn-form"><a class="btnAdmShowRe" href="{{ path('admin_recipe_edit',{ 'id' : recipe.id } ) }}">Modifier</a></div>
+                    <div>{{include('admin/recipe/_delete_form.html.twig') }}</div>
                 </div>
             </div>
         </section>

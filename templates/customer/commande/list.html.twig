@@ -9,8 +9,9 @@
 
             <div class="presentation">
                 <h2 class="">
-                   Mes commandes
+                   Mes commandes <br>
                 </h2>
+
 
                 <div class="alertPanRespon">
                     {% include "_messages_flash.html.twig" %}
@@ -25,6 +26,11 @@
                         <div class="commandes">
                             
                             <table class="lignes col-12">
+
+                            <div class="return">
+                                <a href="{{ path('profile') }}"><i class="fa-solid fa-arrow-left"></i> Retour</a>
+                            </div>
+
                                 <thead class="smart">
                                     <div class="border-panier borderCom">
                                         <tr class="COM">

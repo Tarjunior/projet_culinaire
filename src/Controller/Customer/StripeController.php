@@ -18,7 +18,7 @@ class StripeController extends AbstractController
         Stripe::setApiKey('sk_test_51KX5hbBEB9wFzFNGlyXAca80fTHglcwNubLv8YJN867t9DSSMVNbz6pIZ4K1AQFdcmoeAel89vbROKpLIWvwkWBq00EvUL4P8n');
         
 
-        $domain = 'http://127.0.0.1:8000/';
+        $domain = 'https://ftargino.com/';
 
         /** @var CartRealProduct[] $detailCart */
         $detailCart = $cartService->detail();
