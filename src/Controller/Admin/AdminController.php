@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AdminController extends AbstractController
 {
     #[Route('/admin', name: 'admin')]
-    // Méthode permattant l'affichage de l'accueil admin
+    // Méthode permettant l'affichage de l'accueil admin
     public function index(): Response
     {
         return $this->render('admin/index.html.twig', [
