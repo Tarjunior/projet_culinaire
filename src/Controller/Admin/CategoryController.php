@@ -4,8 +4,6 @@ namespace App\Controller\Admin;
 
 use App\Entity\Category;
 use App\Form\CategoryType;
-use App\Search\SearchItem;
-use App\Form\SearchItemType;
 use App\Services\HandleImage;
 use App\Repository\CategoryRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -26,7 +24,7 @@ class CategoryController extends AbstractController
                           Request $request, 
                           PaginatorInterface $paginator): Response
     {
-        // Paginator
+        // Je pagine les pages après avoir récupéré tous mes catégories
         $categories = $paginator->paginate(
             $categoryRepository->findAll(), /* query NOT result */
             $request->query->getInt('page', 1), /*page number*/
@@ -49,7 +47,7 @@ class CategoryController extends AbstractController
         // Création d'une instance de la classe catégorie
         $category = new Category();
 
-        // Création d'un formulaire d'un certain type : CategoryType
+        // Création d'un formulaire à partir de CategoryType
         // Je y injecte l'instance (l'objet) de la classe catégorie précédemment créée
         $form = $this->createForm(CategoryType::class, $category);
 
@@ -69,16 +67,16 @@ class CategoryController extends AbstractController
                 $handleImage->save($file,$category);
             }
 
-            //L'entity manager persist l'objet catégorie
-            //L'entity manager, prépare la catégorie a aller en base de données
+            //L'entity manager persist (sauvegarde) l'objet catégorie 
             $entityManager->persist($category);
 
-            //L'entity manager envoie pour de bon les données en base.
+            //L'entity manager enregistre les données (l'objet) en bdd.
             $entityManager->flush();
 
-            //Si toutes les étapes sont vqlidées, j'envoie un message flash
+            //Si toutes les étapes sont validées, j'envoie un message flash
             $this->addFlash("success","La catégorie a bien été ajouté.");
 
+            // Je redirige vers cette route
             return $this->redirectToRoute('admin_category_index', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -106,7 +104,7 @@ class CategoryController extends AbstractController
     {   // Récupération de l'image de la categorie
         $oldImage = $category->getImage();
 
-        // Création d'un formulaire d'un certain type : CategoryType
+        // Création d'un formulaire à partir de CategoryType
         // Je y injecte l'instance (l'objet) de la classe catégorie précédemment créée
         $form = $this->createForm(CategoryType::class, $category);
 
@@ -126,8 +124,8 @@ class CategoryController extends AbstractController
                 $handleImage->edit($file,$category,$oldImage);
             }
 
-            // L'entity manager persist l'objet catégorie
-            // L'entity manager, prépare la catégorie a aller en base de données
+            
+            // L'entity manager, enregistre les modifications en bdd
             $entityManager->flush();
 
             // Si toutes les étapes sont validées, j'envoie un message flash

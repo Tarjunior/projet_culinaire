@@ -60,7 +60,10 @@ class RegistrationController extends AbstractController
 
             $mailer->sendConfirmationEmail($user);
 
+            $this->addFlash('success', 'Un e-mail de confirmation de compte vous a été envoyé.');
+            
             return $this->redirectToRoute('app_login');
+
         }
 
         return $this->render('registration/register.html.twig', [

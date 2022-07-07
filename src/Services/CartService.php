@@ -20,15 +20,17 @@ class CartService
 
     public function getCart()
     {
+        // si le panier n'existe pas je l'initialise avec un tableau vide
         return $this->session->get('cart',[]);
     }
 
+    // je sauvegarde le panier dans la session
     public function saveCart(array $cart)
     {
         return $this->session->set('cart',$cart);
     }
 
-
+    // méthode pour add un produit
     public function add($id)
     {
         //Je vais chercher mon panier

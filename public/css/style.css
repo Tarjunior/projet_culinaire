@@ -1,42 +1,111 @@
 /******* RESET CSS *******/
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
   box-sizing: border-box;
 }
 
 html {
-  font-size: 62.5%; /* Ré-équilibrage du Rem face au Pixel pour des calculs simples */
-  height:100%;
+  font-size: 62.5%;
+  /* Ré-équilibrage du Rem face au Pixel pour des calculs simples */
+  height: 100%;
 }
 
 body {
   margin: 0;
-  height:100%;
+  height: 100%;
   width: 100%;
   font-family: "roboto", sans-serif;
   color: #464646;
   background-color: #fcf8f2;
 }
 
-#main{
-  max-width:128rem;
-  min-height:100%;
-  margin:0 auto;
+#main {
+  max-width: 128rem;
+  min-height: 100%;
+  margin: 0 auto;
   margin-top: 15.1rem;
 }
 
@@ -54,20 +123,21 @@ img {
   max-width: 100%;
 }
 
-h1{
-font-size: 3.5rem;
-text-align: center;
+h1 {
+  font-size: 3.5rem;
+  text-align: center;
 }
 
-h2{
-font-size:3rem;
+h2 {
+  font-size: 3rem;
 }
 
-h3, h4 {
+h3,
+h4 {
   font-size: 2rem;
 }
 
-.projet{
+.projet {
   position: fixed;
   font-size: 1.8rem;
   color: #bb0000;
@@ -75,43 +145,81 @@ h3, h4 {
   margin-top: 2rem;
 }
 
-.connexion a, .detail p, .btn-panier{
+.connexion a,
+.detail p,
+.btn-panier {
   font-size: 1rem;
 }
 
-#login-form label, #form-cate label, #cate-form label, .dscpt,.verte,
-.card-footer .dscpt, .size, .bonjour, .p-description, .create, .retour
-{
+#login-form label,
+#form-cate label,
+#cate-form label,
+.dscpt,
+.verte,
+.card-footer .dscpt,
+.size,
+.bonjour,
+.p-description,
+.create,
+.retour {
   font-size: 1.2rem;
 }
 
-.inscription, .titre, .copyright{
+.inscription,
+.titre,
+.copyright {
   font-size: 1.3rem;
 }
 
-.card-footer p, .box-ingredients, .messages, .pagination, .navCompte,
-.btn-restart, .btn-form, .list-square, .manger, .recipeInfo{
+.card-footer p,
+.box-ingredients,
+.messages,
+.pagination,
+.navCompte,
+.btn-restart,
+.btn-form,
+.list-square,
+.manger,
+.recipeInfo {
   font-size: 1.4rem;
 }
 
-#form, .compte, .btn-login, .menu, .page-rsel,.infoUser, 
-.panier, .panShop, .nav-admin, .btn-category, .fp2, .qsn, body{
+#form,
+.compte,
+.btn-login,
+.menu,
+.page-rsel,
+.infoUser,
+.panier,
+.panShop,
+.nav-admin,
+.btn-category,
+.fp2,
+.qsn,
+body {
   font-size: 1.6rem;
 }
 
-.intro, .btnshow, .col-4 h3{
+.intro,
+.btnshow,
+.col-4 h3 {
   font-size: 1.8rem;
 }
 
-.connexion i, .rotate, .fp1 p{
+.connexion i,
+.rotate,
+.fp1 p {
   font-size: 2rem;
 }
 
-#form_recherche, .chefe{
+#form_recherche,
+.chefe {
   font-size: 2.5rem;
 }
 
-#scroll_to_top i, .navbar, .h1catadmin{
+#scroll_to_top i,
+.navbar,
+.h1catadmin {
   font-size: 3rem;
 }
 
@@ -127,60 +235,63 @@ h3, h4 {
   align-items: center;
 }
 
-.pageOff{
+.pageOff {
   margin-top: 17rem;
-  margin-bottom:6rem;
+  margin-bottom: 6rem;
 }
+
 /******** FIN CONTAINER *******/
 
-.return{
-text-align: left;
+.return {
+  text-align: left;
 }
 
 /******* MESSAGE FLASH *******/
 
-.messages{
+.messages {
   width: 100%;
 }
 
-.alert-success{
+.alert-success {
   width: 100%;
-  background-color: rgb(61,146,43, 0.2);
+  background-color: rgb(61, 146, 43, 0.2);
   color: #3D922B;
 }
 
-.alert-danger{
-  background-color:rgb(255,0,0, 0.1);
+.alert-danger {
+  background-color: rgb(255, 0, 0, 0.1);
   color: red;
   padding-left: 0.5rem;
 }
 
-.invalid-feedback{
+.invalid-feedback {
   color: red;
 }
 
-.alert-success, .alert-danger{
+.alert-success,
+.alert-danger {
   margin-bottom: 2rem;
   height: 4rem;
   padding-top: 1rem;
-  border-radius:5px;
+  border-radius: 5px;
 }
 
-#description .alertBoutique{
-width: 100%;
-margin: 0 auto;
+#description .alertBoutique {
+  width: 100%;
+  margin: 0 auto;
 }
+
 /******* FIN MESSAGE FLASH *******/
 
 
 /******* PAGINATOR *******/
 
-#description .pagination{
-  display:flex;
+#description .pagination {
+  display: flex;
   justify-content: center;
 }
 
-#description .page-item{
+#description .page-item {
   display: inline;
   text-align: center;
   border: rgb(0, 0, 0, 0.2) solid 1px;
@@ -191,9 +302,10 @@ margin: 0 auto;
   font-weight: 500;
 }
 
-#description .page-link:visited{
-  color:#3D922B;
+#description .page-link:visited {
+  color: #3D922B;
 }
+
 /******* FIN PAGINATOR *******/
 
 
@@ -203,41 +315,43 @@ margin: 0 auto;
   width: 100%;
   position: fixed;
   top: 0;
-  z-index:100;
+  z-index: 100;
 }
 
 /* HEADER partie 1 - logo bar */
 
 .color-fond {
-  background-color:#3D922B;
+  background-color: #3D922B;
 }
 
 .navlogo {
-width: 125rem;
-padding-top: 1rem;
-padding-bottom: 1rem;
+  width: 125rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
-.logo, .logo2{
+.logo,
+.logo2 {
   display: inline-flex;
   align-items: center;
 }
- 
+
 .dessin img {
   width: 6rem;
 }
 
 .brand {
   font-family: 'Great Vibes', cursive, sans-serif;
-  font-size:3.5rem;
+  font-size: 3.5rem;
   font-weight: 500;
 }
 
-.color-brand1{
+.color-brand1 {
   color: #171717;
 }
 
-#form{ /* Ancienne .search */
+#form {
+  /* Ancienne .search */
   width: 100%;
   height: 4rem;
   border-radius: 10px;
@@ -245,21 +359,23 @@ padding-bottom: 1rem;
   background-color: white;
   display: inline-flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
-#form_query{ /* Ancienne .search input */
+#form_query {
+  /* Ancienne .search input */
   width: 35rem;
   height: 3.8rem;
   border: none;
   outline: none;
-  margin:0;
+  margin: 0;
 }
 
-#form_recherche{ /* Ancienne .btn1 */
+#form_recherche {
+  /* Ancienne .btn1 */
   width: 5rem;
   height: 4rem;
-  margin:0;
+  margin: 0;
   border: none;
   border-radius: 0 10px 10px 0;
   background-color: white;
@@ -269,11 +385,11 @@ padding-bottom: 1rem;
 
 #form_recherche:hover {
   color: #e6640c;
-  }
+}
 
-.bonjour{
-margin-top: -2.5rem;
-color: #171717;
+.bonjour {
+  margin-top: -2.5rem;
+  color: #171717;
 }
 
 .connexion a {
@@ -291,8 +407,8 @@ color: #171717;
 
 /* HEADER partie 2 - Navbar - menu */
 
-.navbarResp{
-  display:none
+.navbarResp {
+  display: none
 }
 
 .fond {
@@ -311,20 +427,22 @@ color: #171717;
 }
 
 .menu {
-  color:#e6640c;
+  color: #e6640c;
   font-weight: 500;
   display: flex;
   align-items: center;
 }
 
-.active, .menu:hover{
+.active,
+.menu:hover {
   color: #3D922B;
-  border-bottom:2px solid #3D922B;
+  border-bottom: 2px solid #3D922B;
 }
+
 /* FIN HEADER partie 2 - Navbar - menu */
 
 
-/******* MAIN *******/
+/******* MAIN ********/
 
 /* Section 1 Image */
 
@@ -351,20 +469,20 @@ color: #171717;
   margin: 0 auto 2.5rem auto;
 }
 
-.presentation .intro{
+.presentation .intro {
   margin-bottom: 5rem;
-  margin-top:1.2rem;
+  margin-top: 1.2rem;
   font-weight: 500;
   line-height: 2.4rem;
 }
 
-.presentation .intro2{
+.presentation .intro2 {
   margin: 0 auto;
 }
 
 .row {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
   width: 99.2rem;
@@ -376,7 +494,7 @@ color: #171717;
 
 #description .image-home {
   width: 100%;
-  height:20rem;
+  height: 20rem;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
   margin-bottom: 1rem;
@@ -391,19 +509,22 @@ color: #171717;
   margin-right: 1rem;
 }
 
-#description h3, p {
+#description h3,
+p {
   text-align: center;
   padding: 0 0.7rem 0.7rem 0.7rem;
 }
 
-#description h1, h2, h3 {
-color: #3D922B;
+#description h1,
+h2,
+h3 {
+  color: #3D922B;
 }
 
 /******* PAGE RECETTES SALEES *******/
 
-#description .detail{
-  display:flex;
+#description .detail {
+  display: flex;
   align-items: center;
   justify-content: space-around;
   margin-bottom: 1rem;
@@ -411,75 +532,77 @@ color: #3D922B;
   padding: 0 0.5rem 0 0;
 }
 
-#description .row .detail p{
+#description .row .detail p {
   font-size: 0.8rem;
 }
 
-#description .chef{
+#description .chef {
   width: 1.5rem;
   margin: 0 auto;
   font-size: 1.5rem;
 }
 
-#description .recipe{
+#description .recipe {
   text-align: center;
   color: #3D922B;
   margin-bottom: 1rem;
   margin-left: 0.5rem;
-  margin-top:1.5rem ;
+  margin-top: 1.5rem;
 }
 
-#description .fa-eye:hover{
-color: #e6640c;
+#description .fa-eye:hover {
+  color: #e6640c;
 }
 
 /* #description .detail p{
   font-size: 1rem;
 } */
 
-#description .pad{
+#description .pad {
   margin-bottom: -9rem;
 }
+
 /******* FIN PAGE RECETTES SALEES *******/
 
 /******* PAGE RECETTE SALEE *******/
 
-#description .box-recette, .recette{
+#description .box-recette,
+.recette {
   margin: 0 auto;
   width: 99.2rem;
-  height:40rem;
-  object-fit: cover;  
+  height: 40rem;
+  object-fit: cover;
 }
 
-#description .info-recette{
+#description .info-recette {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 1rem 0 1rem 0;
 }
 
-#description .icon-recipe{
+#description .icon-recipe {
   margin-right: 5rem;
 }
 
-#description .box-icon{
+#description .box-icon {
   display: flex;
 }
 
-#description .chefe{
+#description .chefe {
   margin: 0 auto;
   width: 2.5rem;
 }
 
-#description .veg{
+#description .veg {
   color: #3D922B;
 }
 
-#description .recipeInfo{
+#description .recipeInfo {
   margin-top: 2rem;
 }
 
-#description .box-preparation{
+#description .box-preparation {
   height: auto;
   display: flex;
   justify-content: space-between;
@@ -487,7 +610,7 @@ color: #e6640c;
   margin-bottom: 0;
 }
 
-#description .page-rsel{
+#description .page-rsel {
   background-color: white;
   height: auto;
   border: rgb(0, 0, 0, 0.2) 0.1rem solid;
@@ -499,53 +622,55 @@ color: #e6640c;
   height: auto;
 }
 
-#description .h4-recette{
+#description .h4-recette {
   margin-bottom: 1.5rem;
 }
 
-#description .quantite{
-margin-bottom: 2.5rem;
-display: flex;
-justify-content: center;
+#description .quantite {
+  margin-bottom: 2.5rem;
+  display: flex;
+  justify-content: center;
 }
 
-#description .box-ingredients{
- display: flex; 
- flex-direction: column;
- line-height :2rem;
+#description .box-ingredients {
+  display: flex;
+  flex-direction: column;
+  line-height: 2rem;
 }
 
-#description .etapes-recette{
+#description .etapes-recette {
   width: 57%;
   height: auto;
 }
 
-#description .etapes-recette, .box-number{
+#description .etapes-recette,
+.box-number {
   padding: 3rem;
   word-spacing: 0.3rem;
 }
 
 
-#description .h2-prepa{
+#description .h2-prepa {
   padding-bottom: 1rem;
 }
 
-.btn1{
+.btn1 {
   width: 10rem;
   margin-top: 2rem;
 }
+
 /******* FIN PAGE RECETTE SALEE *******/
 
 
 /******* PAGE BOUTIQUE *******/
 
-#description .item:hover{
+#description .item:hover {
   box-shadow: 0 0 1rem 0.2rem #464646;
-  transform:scale(1.1);
+  transform: scale(1.1);
   transition-duration: 0.5s;
 }
 
-#description .btnshow{
+#description .btnshow {
   width: 90%;
   height: 3rem;
   border-radius: 5px;
@@ -553,35 +678,37 @@ justify-content: center;
   justify-content: center;
   align-items: center;
   background: #e6640c;
-  color:#fcf8f2;
+  color: #fcf8f2;
   font-weight: 500;
   margin: 0 auto;
-  margin-bottom:1.6rem;
+  margin-bottom: 1.6rem;
   margin-top: 1.6rem;
 }
 
-#description .btnshow:hover{
-background-color: #3D922B;
-color: #fcf8f2;
-transition: 1.5s;
+#description .btnshow:hover {
+  background-color: #3D922B;
+  color: #fcf8f2;
+  transition: 1.5s;
 }
 
-#description .fa-eye:hover{
+#description .fa-eye:hover {
   color: #fcf8f2;
 }
-#description .sell h4{
+
+#description .sell h4 {
   text-align: center;
   color: #3D922B;
 }
 
-#description .sell p{
+#description .sell p {
   padding-top: 1.5rem;
   font-weight: 600;
 }
 
-.imsell{
+.imsell {
   margin: 0.5rem;
 }
+
 /******* FIN PAGE BOUTIQUE *******/
 
 
@@ -591,57 +718,59 @@ transition: 1.5s;
   gap: 5%;
 } */
 
-#description .basket{
- padding-top: 1.5rem;
- border-radius: 5px;
- border: rgb(0, 0, 0, 0.2) 0.1rem solid;
- background-color: white;
+#description .basket {
+  padding-top: 1.5rem;
+  border-radius: 5px;
+  border: rgb(0, 0, 0, 0.2) 0.1rem solid;
+  background-color: white;
 }
 
-.card-footer p{
+.card-footer p {
   margin: -1.2rem 0 -1.2rem 0;
 }
 
-.padding{
-  padding-bottom:2rem ;
+.padding {
+  padding-bottom: 2rem;
 }
+
 /******* FIN PAGE PRODUIT *******/
 
 
 /******* PANIER*******/
 
-.panier{
-width: 100%;
-height: auto;
-border:rgb(0, 0, 0, 0.2) 0.1rem solid;
-border-radius: 5px;
-margin: 0 auto;
-padding: 1rem;
-background-color:white;
+.panier {
+  width: 100%;
+  height: auto;
+  border: rgb(0, 0, 0, 0.2) 0.1rem solid;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: white;
 }
 
-.table{
-width: 100%;
+.table {
+  width: 100%;
 }
 
-.cellule{
+.cellule {
   padding-right: 12.3rem;
 }
 
-#description .border-panier{
+#description .border-panier {
   border-bottom: #464646 solid 0.8rem;
   width: 100%;
 }
 
-.info-panier{
+.info-panier {
   display: flex;
 }
- 
-.info-panier2{
-padding-left: 1rem;
+
+.info-panier2 {
+  padding-left: 1rem;
 }
 
-.p-name, .p-description{
+.p-name,
+.p-description {
   text-align: start;
   padding: 0;
 }
@@ -650,11 +779,12 @@ padding-left: 1rem;
   font-size: 1.2rem;
 } */
 
-.btn-panier{
+.btn-panier {
   color: red;
 }
 
-.btn-valider, #cate-form .btn-valider{
+.btn-valider,
+#cate-form .btn-valider {
   background-color: #3D922B;
   padding: 0.5rem;
   border-radius: 5px;
@@ -663,69 +793,70 @@ padding-left: 1rem;
   border: none;
 }
 
-.btn-vali{
+.btn-vali {
   display: flex;
-  justify-content:flex-end;
+  justify-content: flex-end;
   margin-top: 2rem;
 }
 
-.imageProductCart{
+.imageProductCart {
   width: 5rem;
   height: 5rem;
   object-fit: cover;
 }
 
-.panShop{
+.panShop {
   color: #e6640c;
   font-weight: 600;
 }
 
-.p-panier{
+.p-panier {
   color: #464646;
   font-weight: 500;
   margin-left: -1rem;
 }
 
-.recapPanier{
+.recapPanier {
   margin-top: -4rem;
   margin-bottom: 5rem;
 }
 
-.smart{
-  width:100%;
+.smart {
+  width: 100%;
 }
 
-.InfoComm{
-text-align:center;
+.InfoComm {
+  text-align: center;
 
 
 }
 
-.info-commande{
+.info-commande {
   width: 100%;
   padding-left: 2.2rem;
-  line-height:4rem;
+  line-height: 4rem;
 }
 
-#description .btnComResp{
-width:100%;
-margin-bottom:2rem;
-height: 1.8rem;
+#description .btnComResp {
+  width: 100%;
+  margin-bottom: 2rem;
+  height: 1.8rem;
 }
+
 /******* FIN PANIER*******/
 
 
 /**** DETAIL COMMANDE *******/
 
-#description .text-success{
+#description .text-success {
   color: #3D922B;
 }
 
-#description .text-secondary{
+#description .text-secondary {
   color: red;
 }
 
-.recaP{
+.recaP {
   background-color: white;
 }
 
@@ -767,15 +898,15 @@ height: 1.8rem;
 .compte:hover {
   background-color: #3D922B;
   transition: 1.5s;
-} 
+}
 
-.bt-delete-compte{
+.bt-delete-compte {
   border: none;
   font-weight: bold;
-  color:white;
-  background-color:red;
+  color: white;
+  background-color: red;
   border-radius: 10%;
-  
+
 }
 
 #login-form {
@@ -784,12 +915,12 @@ height: 1.8rem;
   flex-direction: column;
 }
 
-.mess-login{
-  margin-bottom:0.5rem;
+.mess-login {
+  margin-bottom: 0.5rem;
   color: red;
 }
 
-.logout{
+.logout {
   background-color: #3D922B;
   color: #fcf8f2;
   font-weight: bold;
@@ -798,7 +929,7 @@ height: 1.8rem;
 }
 
 .form-control {
-  width:100%;
+  width: 100%;
   margin-bottom: 1rem;
   height: 4rem;
   outline: none;
@@ -817,7 +948,7 @@ height: 1.8rem;
 }
 
 .btn-login {
-  width:102%;
+  width: 102%;
   text-transform: uppercase;
   border: none;
   background-color: #3D922B;
@@ -886,80 +1017,82 @@ padding: 0;
   margin-top: 1rem;
 }
 
-.create label{
+.create label {
   font-weight: bold;
 }
 
 .CGV {
   color: #3D922B;
 }
+
 /******* FIN PAGE D'INSCRIPTION (create) *******/
 
 
 /****** PAGE MON COMPTE ******/
 
-.pageCompte{
-  width:100%;
+.pageCompte {
+  width: 100%;
   margin: 0 auto;
-  margin-bottom:2rem ;
+  margin-bottom: 2rem;
   margin-top: 20rem;
-  border:rgb(0, 0, 0, 0.2) 0.1rem solid;
-  border-radius:0 0 5px 5px;
+  border: rgb(0, 0, 0, 0.2) 0.1rem solid;
+  border-radius: 0 0 5px 5px;
   background-color: white;
 }
 
-.couverture{
+.couverture {
   max-height: 25rem;
   object-fit: cover;
   display: flex;
   justify-content: space-around;
 }
-.couverture img{
-  width:100%;
+
+.couverture img {
+  width: 100%;
   object-fit: cover;
 }
 
-.avatarProfile
-{
-    height:15rem;
-    width:15rem;
-    border-radius:50%;
-    object-fit: cover;
-    position: relative;
-    z-index:3;
-    top: -10rem;
-    left: 3rem;
-    border: 0.3rem solid white;
+.avatarProfile {
+  height: 15rem;
+  width: 15rem;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 3;
+  top: -10rem;
+  left: 3rem;
+  border: 0.3rem solid white;
 }
 
-.infoUser{
-margin:-2rem 0 4rem 0;
+.infoUser {
+  margin: -2rem 0 4rem 0;
 }
 
-.infoUser p{
+.infoUser p {
   text-align: left;
   padding-left: 3rem;
 }
 
-.navCompte{
-background-color: rgb(61,146,43, 0.2);
-position: relative;
-top: -15rem;
-width: 100%;
-height: 3rem;
-display: flex;
-justify-content: end;
-align-items: center;
-padding-right: 6rem;
-color: #464646;
-font-weight: bold;
-gap:10%;
+.navCompte {
+  background-color: rgb(61, 146, 43, 0.2);
+  position: relative;
+  top: -15rem;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding-right: 6rem;
+  color: #464646;
+  font-weight: bold;
+  gap: 10%;
 }
 
-.navCompte a:hover{
-color: #e6640c;
-font-weight: bold;
+.navCompte a:hover {
+  color: #e6640c;
+  font-weight: bold;
 }
+
 /****** FIN PAGE MON COMPTE ******/
 
 
@@ -967,48 +1100,48 @@ font-weight: bold;
 
 /******* NAVBAR *******/
 
-.navAdmin{
-background-color: #464646;
-color: #fcf8f2;
-margin-bottom: 2rem;
+.navAdmin {
+  background-color: #464646;
+  color: #fcf8f2;
+  margin-bottom: 2rem;
 }
 
-.nav-admin{
- width: 100%;
- height: 7rem;
- padding:0 2rem 0 2rem;
- display: flex;
- justify-content: space-between;
- align-items: center;
- background-color: #464646;
- color: #fcf8f2;
- position: fixed;
- top: 0;
- z-index: 100; 
+.nav-admin {
+  width: 100%;
+  height: 7rem;
+  padding: 0 2rem 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #464646;
+  color: #fcf8f2;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 }
 
 .menu-admin:hover {
   color: #3D922B;
-  border-bottom:0.3rem solid #3D922B;
+  border-bottom: 0.3rem solid #3D922B;
 }
 
-.mtop{
+.mtop {
   margin-top: 7rem;
 }
 
 /******* CATEGORIES INDEX *******/
 
-.h4-cat{
+.h4-cat {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
 }
 
-.image-sell{
+.image-sell {
   height: 30rem;
   object-fit: cover;
 }
 
-.btn-admin{
+.btn-admin {
   display: flex;
   justify-content: space-around;
 }
@@ -1022,10 +1155,10 @@ margin-bottom: 2rem;
   color: #fcf8f2;
   border-radius: 5px;
   margin: 1rem;
-  padding-top: 0.5rem; 
+  padding-top: 0.5rem;
 }
 
-.btn-restart{
+.btn-restart {
   font-weight: 500;
   color: #171717;
   margin-left: 2rem;
@@ -1033,24 +1166,24 @@ margin-bottom: 2rem;
 
 /******* CATEGORIES NEW *******/
 
-.adminForm{
+.adminForm {
   margin-bottom: 5rem;
 }
 
-.form-cate{
-width: 99.2rem;
-height: auto;
-border: #464646 0.1rem solid;
-border-radius: 4px;
-margin: 0 auto;
-padding: 1.5rem;
-display: flex;
-flex-direction: column;
-justify-content: center;
+.form-cate {
+  width: 99.2rem;
+  height: auto;
+  border: #464646 0.1rem solid;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.title-cat{
-  margin-bottom:2.5rem;
+.title-cat {
+  margin-bottom: 2.5rem;
   margin-top: 3rem;
 }
 
@@ -1065,8 +1198,8 @@ justify-content: center;
   padding: 0.5rem;
 }
 
-.bt{
-  background-color:red;
+.bt {
+  background-color: red;
 }
 
 .btnAdmShowRe {
@@ -1075,60 +1208,68 @@ justify-content: center;
   padding-top: 0.1rem;
 }
 
-.retour, .return{
-display: flex;
-/* justify-content: flex-end; */
-color: #fcf8f2;
-font-weight: 700;
-margin-bottom: 0.5rem;
+.retour,
+.return {
+  display: flex;
+  /* justify-content: flex-end; */
+  color: #fcf8f2;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 }
 
-.retour a, .return a{
+.retour a,
+.return a {
   background-color: #464646;
   border-radius: 4px;
-padding: 0.5rem;
+  padding: 0.5rem;
 }
 
-.h1catadmin{
+.return a {
+  background-color:#3D922B;
+}
+
+.h1catadmin {
   margin-bottom: 2.5rem;
-  font-size:3rem ;
+  font-size: 3rem;
 }
 
-#cate-form label, .form-cate label{
+#cate-form label,
+.form-cate label {
   font-weight: bold;
 }
 
-.ajoutRecipe{
+.ajoutRecipe {
   margin-top: 1rem;
 }
 
-#cate-form input{
-  margin-top:0.5rem;
+#cate-form input {
+  margin-top: 0.5rem;
 }
 
 /******** Admin Recipe/Show ********/
 
-.d-recipe{
-  margin-top:6rem;
+.d-recipe {
+  margin-top: 6rem;
 }
 
 /*** Product index ***/
 
-.dscpt{
+.dscpt {
   word-spacing: normal;
   margin-top: -2rem;
   font-weight: bold;
 }
+
 /******* FIN PAGE ADIMIN *******/
 
- 
+
 /******* FOOTER *******/
 
 #footer {
 
-  width:100%;
-  bottom:0;
-  background-color: rgb(61,146,43, 0.2);
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(61, 146, 43, 0.2);
 }
 
 .fp1 {
@@ -1137,11 +1278,11 @@ padding: 0.5rem;
   width: 125rem;
 }
 
-.color-brand1{
-    color: #242424;
+.color-brand1 {
+  color: #242424;
 }
 
-.fp1 p{
+.fp1 p {
   font-weight: 500;
   color: #e6640c;
   margin-left: 11rem;
@@ -1166,12 +1307,12 @@ padding: 0.5rem;
 }
 
 .instagram:hover {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   color: white;
 }
 
 .facebook-f:hover {
-  background:  #3B5998;
+  background: #3B5998;
   color: white;
 }
 
@@ -1210,7 +1351,7 @@ padding: 0.5rem;
   margin-bottom: 1rem;
 }
 
-.newsletter{
+.newsletter {
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -1242,7 +1383,7 @@ padding: 0.5rem;
 font-size: 1.4rem;
 } */
 
-.manger img{
+.manger img {
   margin-left: -0.4rem;
   margin-bottom: -0.8rem;
   margin-top: -0.3rem;
@@ -1254,12 +1395,12 @@ font-size: 1.4rem;
 
 /****** Pages Documents Légaux *******/
 
-.marge p{
+.marge p {
   text-align: justify;
-  line-height:30px;
+  line-height: 30px;
 }
 
-.effect:hover{
+.effect:hover {
   color: #e6640c;
 }
 
@@ -1273,49 +1414,83 @@ font-size: 1.4rem;
 }
 
 .foot .copyright {
-text-align: center;
-margin-top: 1.6rem;
-color: #464646;
+  text-align: center;
+  margin-top: 1.6rem;
+  color: #464646;
 }
 
 /******* Système de colonne desktop: *******/
 
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
+.col-1 {
+  width: 8.33%;
+}
+
+.col-2 {
+  width: 16.66%;
+}
+
+.col-3 {
+  width: 25%;
+}
+
+.col-4 {
+  width: 33.33%;
+}
+
+.col-5 {
+  width: 41.66%;
+}
+
+.col-6 {
+  width: 50%;
+}
+
+.col-7 {
+  width: 58.33%;
+}
+
+.col-8 {
+  width: 66.66%;
+}
+
+.col-9 {
+  width: 75%;
+}
+
+.col-10 {
+  width: 83.33%;
+}
+
+.col-11 {
+  width: 91.66%;
+}
+
+.col-12 {
+  width: 100%;
+}
 
 /* ************************************ */
 
 /*******************************************RESPONSIVE TABLETTE**********************************************/
 
-@media screen and (min-width: 769px) and (max-width:1024px)
-{
+@media screen and (min-width: 769px) and (max-width:1024px) {
 
-  body{
+  body {
     margin: 0;
     width: 100%;
   }
 
-  main{
+  main {
     width: 100%;
   }
 
   #header {
     width: 100%;
     position: absolute;
-  } 
+  }
 
   .container {
-    width:100%;
+    width: 100%;
     height: auto;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -1323,11 +1498,12 @@ color: #464646;
     justify-content: space-between;
   }
 
-  .connexion i, .menu{
+  .connexion i,
+  .menu {
     font-size: 1.3rem;
   }
 
-  .logo{
+  .logo {
     width: 35%;
     display: flex;
     align-items: center;
@@ -1337,26 +1513,27 @@ color: #464646;
     width: 4.5rem;
   }
 
-  .brand{
-    font-size:2.5rem;
+  .brand {
+    font-size: 2.5rem;
   }
 
-   #form{
-     width: 26rem;
-     margin-right: 2rem;
-   }
+  #form {
+    width: 26rem;
+    margin-right: 2rem;
+  }
 
-   #form_query{
+  #form_query {
     width: 21rem;
-    height:2rem;
-    font-size:1.2rem;
+    height: 2rem;
+    font-size: 1.2rem;
   }
 
-  #form_recherche{
-  font-size: 1.5rem;
+  #form_recherche {
+    font-size: 1.5rem;
   }
 
-  #form, #form_recherche{
+  #form,
+  #form_recherche {
     height: 2.5rem;
   }
 
@@ -1369,16 +1546,16 @@ color: #464646;
     padding: 0 0.5rem;
   }
 
-  .bonjour{
+  .bonjour {
     font-size: 0.9rem;
     margin-top: -2.5rem;
-    }  
+  }
 
-  .fond{
+  .fond {
     height: 3rem;
   }
 
-  .retour{
+  .retour {
     margin-top: 1.5rem;
     margin-bottom: 0.5rem;
   }
@@ -1386,113 +1563,123 @@ color: #464646;
   .image {
     height: 20rem;
     margin-top: -6rem;
-  }  
+  }
 
   #description {
-  width: 100%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+    width: 100%;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .presentation {
     width: 100%;
     text-align: center;
     margin: 0 auto 2.5rem auto;
-  } 
+  }
 
-  .row{
+  .row {
     width: 100%;
   }
 
-  .mtop{
+  .mtop {
     margin-top: 10rem;
   }
 
-  #description .text-format p, ol, td{
+  #description .text-format p,
+  ol,
+  td {
     text-align: justify;
   }
 
   #footer .fp1 .reseaux {
     margin: 0 0 1rem 0;
-    }
+  }
 
-    .login{
-      width: 100%;
-    }
+  .login {
+    width: 100%;
+  }
 
-    #description .box-recette, .recette{
-      width: 100%;
-      margin-top: -6rem;
-      height: 30rem;
-    }
+  #description .box-recette,
+  .recette {
+    width: 100%;
+    margin-top: -6rem;
+    height: 30rem;
+  }
 
-    #description .box-recette, .admRecette{
-      margin-top: 0;
-    }
-  
-    .panier, .recaP{
-      width: 90%;
-    }
+  .condi-user {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* margin-left: -3rem;
+      margin-right: -3rem; */
+  }
 
-    .pageCompte{
-      margin-top: -2rem;
-    }
+  #description .box-recette,
+  .admRecette {
+    margin-top: 0;
+  }
 
-    /**** ADMIN ****/
+  .panier,
+  .recaP {
+    width: 90%;
+  }
 
-    .nav-admin{
-      position: fixed;
-      font-size: 1.4rem;
-      height: 7rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding-top:1rem;
-      padding-bottom:1rem;
-    }
+  .pageCompte {
+    margin-top: -2rem;
+  }
 
-    .form-cate{
-      width: 100%;
-      margin-left: 1.5rem;
-      margin-right: 1.5rem;
-    }
+  /**** ADMIN ****/
 
-    .couverture img{
-      width:100%;
-      object-fit: cover;
-    }
+  .nav-admin {
+    position: fixed;
+    font-size: 1.4rem;
+    height: 7rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 
-    .navCompte{
-    gap:7%;
-      }
-} 
+  .form-cate {
+    width: 100%;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
 
-/******* RESPONSIVE SMARTPHONE *******/
-@media screen and (max-width: 380px)
-{
-  .brand{
-    font-size:120%;
+  .couverture img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .navCompte {
+    gap: 7%;
   }
 }
 
-@media screen and (max-width: 768px) 
+/******* RESPONSIVE SMARTPHONE *******/
+@media screen and (max-width: 380px) {
+  .brand {
+    font-size: 120%;
+  }
+}
 
-{
+@media screen and (max-width: 768px) {
 
-  body{
+  body {
     margin: 0;
     max-width: 100%;
   }
 
-  h1{
-    font-size:2.5rem;
+  h1 {
+    font-size: 2.5rem;
   }
 
   #header {
     position: absolute;
   }
 
-  #main{
+  #main {
     max-width: 100%;
     margin-bottom: -3rem;
   }
@@ -1514,15 +1701,17 @@ color: #464646;
   }
 
 
-  .messages, .panier{
+  .messages,
+  .panier {
     font-size: 1.2rem;
   }
 
-  .btn-panier, .btnComResp{
+  .btn-panier,
+  .btnComResp {
     font-size: 1rem;
   }
 
-  .btn1{
+  .btn1 {
     display: inline-flex;
     justify-content: center;
     gap: 50%;
@@ -1530,35 +1719,38 @@ color: #464646;
     margin-bottom: 2rem;
   }
 
-  .btn-form{
+  .btn-form {
     width: 10rem;
   }
 
-  .projet{
-    width:100%;
-    margin:0 auto;
-    font-size:1.4rem;
+  .projet {
+    width: 100%;
+    margin: 0 auto;
+    font-size: 1.4rem;
     margin-top: -2rem;
-    
+
   }
 
-  .td-panier,  .info-commande{
+  .td-panier,
+  .info-commande {
     font-size: 1.2rem;
   }
 
-  .logo, .gestionAdm, .info-recette h1, .chefe{
+  .logo,
+  .gestionAdm,
+  .info-recette h1,
+  .chefe {
     font-size: 2rem;
   }
 
   /******* Image logo *******/
 
-  .logo2{
+  .logo2 {
     text-align: center;
   }
 
   .dessin img,
-  .brand
-  {
+  .brand {
     display: flex;
     align-items: center;
   }
@@ -1571,28 +1763,29 @@ color: #464646;
     max-width: 100%;
     margin-left: 2rem;
     margin-right: 2rem;
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
     letter-spacing: 0.1rem;
   }
 
   .brand .white {
     color: #fcf8f2;
-    
+
   }
 
   .connexion {
     display: none;
   }
 
-  .pagination{
-   padding-bottom: 3rem;
+  .pagination {
+    padding-bottom: 3rem;
   }
 
 
   /*////////// BAR DE MENU RESPONSIVE /////////*/
-  .menu:hover{
-    border-bottom:none;
+  .menu:hover {
+    border-bottom: none;
   }
+
   .navbarResp {
     opacity: 0.95;
     display: block;
@@ -1607,7 +1800,7 @@ color: #464646;
   }
 
   .navbar-container {
-    width:100%;
+    width: 100%;
     display: block;
     /* position: relative; */
     height: 6.4rem;
@@ -1678,7 +1871,7 @@ color: #464646;
     margin-top: -1.5rem;
   }
 
-  .navbarResp .ul1-admin{
+  .navbarResp .ul1-admin {
     margin-top: -10rem;
     max-width: 25rem;
   }
@@ -1689,7 +1882,8 @@ color: #464646;
     font-weight: 500;
   }
 
-  .logo, .gestionAdm{
+  .logo,
+  .gestionAdm {
     position: absolute;
     top: 0.5rem;
     right: 1.5rem;
@@ -1697,108 +1891,110 @@ color: #464646;
     flex-direction: row-reverse;
   }
 
-  .gestionAdm{
-  margin-top: 1.4rem;
+  .gestionAdm {
+    margin-top: 1.4rem;
   }
 
-  .navbar-container input[type="checkbox"]:checked ~ .ul1 {
+  .navbar-container input[type="checkbox"]:checked~.ul1 {
     transform: translateX(0);
   }
 
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1 {
+  .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line1 {
     transform: rotate(35deg);
   }
 
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2 {
+  .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line2 {
     transform: scaleY(0);
   }
 
-  .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3 {
+  .navbar-container input[type="checkbox"]:checked~.hamburger-lines .line3 {
     transform: rotate(-35deg);
   }
 
-  .menu{
-    color:#3D922B;
+  .menu {
+    color: #3D922B;
   }
 
-  .fond{
+  .fond {
     display: none;
   }
 
   /******* MESSAGE FLASH *******/
 
-/* .messages{
+  /* .messages{
   font-size: 1.2rem;
 } */
 
   /********NAVBAR ADMIN**********/
 
-  #header-admin{
+  #header-admin {
     width: 100%;
     margin-bottom: -7rem;
   }
 
-  .navAdmin{
+  .navAdmin {
     height: 14rem;
   }
 
-  .menuAdm{
+  .menuAdm {
     color: #fcf8f2;
   }
 
-  .nav-admin{
+  .nav-admin {
     display: none;
   }
 
-  .navbarResp{
+  .navbarResp {
     display: flex;
     align-items: center;
   }
 
-  .navADM{
+  .navADM {
     height: 11rem;
     margin: 0 auto;
     margin-top: -3rem;
-    
+
   }
-  
-  .se-connecter{
+
+  .se-connecter {
     color: #fcf8f2;
   }
-  
-  .se-connecter i{
+
+  .se-connecter i {
     margin-right: 0.5rem;
   }
+
   /******** FIN NAVBAR ADMIN**********/
-  
+
   /*///////////*/
 
   .navbar .menuNav {
     display: none;
   }
 
-  form{
-    width:100%;
+  form {
+    width: 100%;
   }
 
-  #form{
+  #form {
     width: 100%;
     margin-top: 6rem;
     height: 3rem;
     background-color: white;
   }
 
-  #form_query{
+  #form_query {
     width: 100%;
-    height:2.8rem;
+    height: 2.8rem;
     margin-right: 4.5rem;
   }
 
-  #form_recherche{
+  #form_recherche {
     width: 100%;
   }
 
-  #form, #form_recherche{
+  #form,
+  #form_recherche {
     height: 3rem;
   }
 
@@ -1808,8 +2004,8 @@ color: #464646;
 
   /* SECTION 1 IMAGE */
 
-  .image{
-    width:100%;
+  .image {
+    width: 100%;
     height: 10rem;
     margin-top: -4.5rem;
   }
@@ -1832,7 +2028,7 @@ color: #464646;
     margin-bottom: 1.5rem;
   }
 
-  .presentation .intro{
+  .presentation .intro {
     margin-bottom: 1rem;
   }
 
@@ -1842,17 +2038,17 @@ color: #464646;
     flex-direction: column; */
   }
 
-  .first{
+  .first {
     width: 100%;
   }
 
-  .image-home{
+  .image-home {
     min-width: 100%;
-    object-fit:contain;
+    object-fit: contain;
     margin-right: 6rem;
   }
 
-  #description .item  {
+  #description .item {
     width: 100%;
     margin-bottom: 3rem;
     margin-right: 0;
@@ -1863,205 +2059,217 @@ color: #464646;
     margin-top: -3rem;
   }
 
-  .para{
+  .para {
     margin-bottom: 7rem;
   }
 
-    /* FIN SECTION 2 DESCRIPTION */
+  /* FIN SECTION 2 DESCRIPTION */
 
-    /******* PAGE RECETTE SUCREE *******/
+  /******* PAGE RECETTE SUCREE *******/
 
-    /******* PAGE RECETTE SALéE/SUCREE ONE *******/
+  /******* PAGE RECETTE SALéE/SUCREE ONE *******/
 
-    #description .retour{
-      margin-right: -26.8rem;
-    }
+  #description .retour {
+    margin-right: -26.8rem;
+  }
 
-    #description .box-recette, .recette{
-      height: 20rem;
-      object-fit: cover; 
-    }
+  #description .box-recette,
+  .recette {
+    height: 20rem;
+    object-fit: cover;
+  }
 
-    #description .info-recette{
-      width:100%;
-    }
-
-    #description .box-icon{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      margin-left: -3.2rem;
-      margin-right: -3.2rem;
-      margin-top:0.5rem
-    }
-
-    #description .box-icon .chefe{
-      width: 2rem;
-    }
-
-    #description .box-preparation{
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 4rem;
-    }
-
-    #description .page-rsel{
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    #description .text-format{
-      width: 100%;
-    }
-
-    #description .text-format p, ol, td,table{
-      text-align: justify;
-    }
-
-    .condi-user{
-      text-align:center;
-      margin-left: -3rem;
-      margin-right: -3rem;
-    }
-
-    .login-recette{
-      margin:10px 0;
-    }
-
-  /*******Responsive page boutique *******/
-  
-  #description .sell{
+  #description .info-recette {
     width: 100%;
   }
 
-   /*******Responsive page produit *******/
+  #description .box-icon {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -3.2rem;
+    margin-right: -3.2rem;
+    margin-top: 0.5rem
+  }
 
-   #description .pdct{
+  #description .box-icon .chefe {
+    width: 2rem;
+  }
+
+  #description .box-preparation {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 4rem;
+  }
+
+  #description .page-rsel {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  #description .text-format {
+    width: 100%;
+  }
+
+  #description .text-format p,
+  ol,
+  td,
+  table {
+    text-align: justify;
+  }
+
+  .condi-user {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    /* margin-left: -3rem;
+      margin-right: -3rem; */
+  }
+
+  .login-recette {
+    margin: 10px 0;
+  }
+
+  /*******Responsive page boutique *******/
+
+  #description .sell {
+    width: 100%;
+  }
+
+  /*******Responsive page produit *******/
+
+  #description .pdct {
     width: 100%;
     margin-bottom: 1rem;
   }
 
-  #description .gap{
+  #description .gap {
     margin-bottom: 4rem;
   }
 
-  .image-sell{
-    width:100%;
+  .image-sell {
+    width: 100%;
     object-fit: cover;
   }
 
-    /*******Responsive PANIER *******/
+  /*******Responsive PANIER *******/
 
-    .alert-success{
+  .alert-success {
     width: 100%;
-    }
+  }
 
-    #description .alertPanier{
-      width: 100%;
-      margin: 0 auto;
-      margin-top: 1rem;
-      margin-bottom: -2.5rem;
-    }
+  #description .alertPanier {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: -2.5rem;
+  }
 
-    #description .panier{
-      width: 100%;
-      margin-bottom:7.5rem;
-    }
+  #description .panier {
+    width: 100%;
+    margin-bottom: 7.5rem;
+  }
 
-      #description .border-panier{
-      margin: 0 auto;
-    }
+  #description .border-panier {
+    margin: 0 auto;
+  }
 
-    .cellule{
-      padding-right: 7.6rem;
-    }
-    .cell{
-      padding-right:0;
-    }
+  .cellule {
+    padding-right: 7.6rem;
+  }
 
-    .lignes{
-      display: flex;
-      flex-wrap: wrap;
-      margin-right: 0;
-    }
+  .cell {
+    padding-right: 0;
+  }
 
-    .p-name, .p-description{
-      font-size: 1rem;
-    }
+  .lignes {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 0;
+  }
 
-    .info-panier2{
-      width: 8rem;
-    }
+  .p-name,
+  .p-description {
+    font-size: 1rem;
+  }
 
-    /****** MES COMMANDES RESPONSIVE *******/
+  .info-panier2 {
+    width: 8rem;
+  }
 
-    #description .info-commande{
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding-left: 2.2rem;
-      align-items:center;
-      margin-right: 10rem;
-      flex-wrap: wrap;
-    }
+  /****** MES COMMANDES RESPONSIVE *******/
 
-    #description .btnComResp{
-    width:100%;
+  #description .info-commande {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2.2rem;
+    align-items: center;
+    margin-right: 10rem;
+    flex-wrap: wrap;
+  }
+
+  #description .btnComResp {
+    width: 100%;
     height: 1.8rem;
-    }
+  }
 
-    .COM{
-      width:100%;
-      display: flex;
-      justify-content: space-between;
-    }
-    /****** MES COMMANDES RESPONSIVE *******/
+  .COM {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
 
-    .btn-panier{
-      color: red;
-    }
+  /****** MES COMMANDES RESPONSIVE *******/
 
-    .QTY{
-      margin-left: 2rem;
-      margin-right: 4.5rem;
-    }
+  .btn-panier {
+    color: red;
+  }
 
-    .sous-total{
-      padding-left: 23rem;
-    }
+  .QTY {
+    margin-left: 2rem;
+    margin-right: 4.5rem;
+  }
 
-    tbody{
-      width:100%;
-      display: flex;
-     flex-direction: column;
-     justify-content: space-between;
-    }
-    /******* FIN Responsive PANIER *******/
+  .sous-total {
+    padding-left: 23rem;
+  }
 
+  tbody {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 
-     /******* RECAPITULATIF Responsive *******/
-
-    .recapPanier, .recaP{
-      width: 100%;
-      padding-right: 1.5rem;
-      padding-left: 1.5rem;
-      margin: 0 auto;
-    }
-
-    .recapPanier{
-      position: relative;
-      margin-bottom:4rem;
-      margin-top: -5rem;
-    }
-     /******* FIN RECAPITULATIF Responsive *******/
+  /******* FIN Responsive PANIER *******/
 
 
-     /******* MES COMMANDES Responsive *******/
+  /******* RECAPITULATIF Responsive *******/
 
-     #description .borderCom{
-       width: 100%;
-       margin-left:0;       
-     }
+  .recapPanier,
+  .recaP {
+    width: 100%;
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+    margin: 0 auto;
+  }
+
+  .recapPanier {
+    position: relative;
+    margin-bottom: 4rem;
+    margin-top: -5rem;
+  }
+
+  /******* FIN RECAPITULATIF Responsive *******/
+
+
+  /******* MES COMMANDES Responsive *******/
+
+  #description .borderCom {
+    width: 100%;
+    margin-left: 0;
+  }
 
   /******* PAGE DE CONNEXION (login) *******/
 
@@ -2072,54 +2280,54 @@ color: #464646;
 
   /*******Responsive page compte *******/
 
-  .pageCompte{
+  .pageCompte {
     margin-top: 0;
     margin-right: 1rem;
   }
 
-  .couverture img{
-    width:100%;
+  .couverture img {
+    width: 100%;
     max-height: 18rem;
     object-fit: cover;
 
   }
 
-  .avatarProfile{
-    height:10rem;
-    width:10rem;
+  .avatarProfile {
+    height: 10rem;
+    width: 10rem;
     top: -10rem;
     left: 1rem;
   }
 
-  .navCompte{
-    width:100%;
-    margin-top:5rem;
-    margin-right: 0;    
+  .navCompte {
+    width: 100%;
+    margin-top: 5rem;
+    margin-right: 0;
   }
 
-  .navCompte a{
-    font-size: 1.3rem; 
+  .navCompte a {
+    font-size: 1.3rem;
     margin-right: -1rem;
     font-weight: bold;
-    gap:0;
+    gap: 0;
     text-align: center;
   }
 
-  .navCompte button{
-    font-size:0.9rem;
+  .navCompte button {
+    font-size: 0.9rem;
   }
 
-  .infoUser{
-    margin-top:-7rem;
+  .infoUser {
+    margin-top: -7rem;
   }
 
-  .form-delete-profile{
-    width:7rem;
-    height:3rem;
+  .form-delete-profile {
+    width: 7rem;
+    height: 3rem;
     margin-right: -5.5rem;
   }
 
-  /*******Fin Responsive page compte *******/  
+  /*******Fin Responsive page compte *******/
 
   /* FOOTER */
 
@@ -2132,33 +2340,34 @@ color: #464646;
   }
 
   #footer .fp1 .reseaux {
-  margin: 1.6rem 0 1rem 0;
+    margin: 1.6rem 0 1rem 0;
   }
 
-  .icons-footer .rotate  {
-    color:white;
-    border:none;
+  .icons-footer .rotate {
+    color: white;
+    border: none;
   }
 
   .instagram {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     color: white;
   }
-  
+
   .facebook-f {
-    background: #3B5998 ;
-    color:white;
+    background: #3B5998;
+    color: white;
   }
-  
+
   .youtube {
-    background:  #bb0000;
-    color:white;
+    background: #bb0000;
+    color: white;
   }
-  
+
   .envelope {
     background: #0088CC;
     color: white;
   }
+
   footer .container .col-4 {
     width: 100%;
     margin-bottom: 1rem;
@@ -2181,31 +2390,32 @@ color: #464646;
 
   /******* PAGE ADMIN *******/
 
-  .menu-admin{
+  .menu-admin {
     display: none;
   }
 
-  .adminForm{
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding-top: 5rem;
-      margin-bottom: 0;
-      margin-top: -20rem;
+  .adminForm {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 5rem;
+    margin-bottom: 0;
+    margin-top: -20rem;
   }
 
-  .h1catadmin{
+  .h1catadmin {
     font-size: 2.5rem;
-    margin-top:1.6rem;
+    margin-top: 1.6rem;
   }
 
   #cate-form input {
-    width:98%;
+    width: 98%;
   }
 
-  .smart{
-    width:100%;
+  .smart {
+    width: 100%;
   }
+
   /******* FIN PAGE ADMIN *******/
 }

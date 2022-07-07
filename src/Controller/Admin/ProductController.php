@@ -4,8 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Product;
 use App\Form\ProductType;
-use App\Search\SearchItem;
-use App\Form\SearchItemType;
+// use App\Search\SearchItem;
+// use App\Form\SearchItemType;
 use App\Services\HandleImage;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -45,7 +45,8 @@ class ProductController extends AbstractController
     {
         // j'instancie un nouveau objet product
         $product = new Product();
-        // j'appelle Doctrine pour créer un formulaire
+        // Création d'un formulaire à partir de ProductType
+        // Je y injecte l'instance (l'objet) de la classe produit précédemment créée
         $form = $this->createForm(ProductType::class, $product);
         // demmande de traitement de la saisie du formulaire
         $form->handleRequest($request);
@@ -71,7 +72,7 @@ class ProductController extends AbstractController
             // redirection de la page vers la page ci-dessous
             return $this->redirectToRoute('admin_product_index', [], Response::HTTP_SEE_OTHER);
         }
-        // création de la vue du form affiché sur la page indiqué au render
+        //Ici, si le formulaire n'a pas été soumis, on affiche la page
         return $this->renderForm('admin/product/new.html.twig', [
             'product' => $product,
             'form' => $form,
@@ -94,7 +95,8 @@ class ProductController extends AbstractController
     {
         // Récupération de l'image du produit
         $oldImage = $product->getImage();
-        // Création d'un formulaire d'un certain type : ProductType
+
+        // Création d'un formulaireà partir de ProductType
         // Je y injecte l'instance (l'objet) de la classe Product précédemment créée
         $form = $this->createForm(ProductType::class, $product);
          // Cela permet de traiter les données du formulaire
@@ -112,8 +114,7 @@ class ProductController extends AbstractController
                 $handleImage->edit($file,$product,$oldImage);
             }
             
-            // L'entity manager persist l'objet catégorie
-            // L'entity manager, prépare la catégorie a aller en base de données
+            // L'entity manager enregistre les modifications en bdd
             $entityManager->flush();
 
             //J'envoie un message flash

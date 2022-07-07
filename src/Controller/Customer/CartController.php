@@ -17,6 +17,7 @@ class CartController extends AbstractController
         $this->cartService = $cartService;
     }
 
+    // Méthode permettant l'ajout d'un produit
     #[Route('/panier/ajouter/{id}', name: 'cart_add')]
     public function add(int $id,ProductRepository $productRepository,Request $request)
     {
@@ -40,6 +41,7 @@ class CartController extends AbstractController
         return $this->redirectToRoute("ecommerce");
     }
 
+    // Méthode permettan la suppression d'un produit
     #[Route('/panier/supprimer/{id}', name: 'cart_remove')]
     public function delete(int $id,ProductRepository $productRepository)
     {
@@ -57,6 +59,7 @@ class CartController extends AbstractController
         return $this->redirectToRoute("cart_detail");
     }
 
+    // Méthode permettant l'affichage des details du panier
     #[Route('/panier/detail', name: 'cart_detail')]
     public function detail()
     {
@@ -70,6 +73,7 @@ class CartController extends AbstractController
         ]);
     }
 
+    // Méthode permettant la décrémentation d'un produit
     #[Route('/panier/decrementer/{id}', name: 'cart_decrement')]
     public function decrementProduct(int $id,ProductRepository $productRepository)
     {

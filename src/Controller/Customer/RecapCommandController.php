@@ -15,6 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class RecapCommandController extends AbstractController
 {
+    // Récapitulatif et création de la commande
     #[Route('/commande/recapitulatif', name: 'command_recap')]
     public function recap(Request $request, EntityManagerInterface $em,CartService $cartService)
     {

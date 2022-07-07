@@ -37,12 +37,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Le champ prénom est requis.')]
-    #[Assert\Regex(pattern: '/^[a-z]+$/i', htmlPattern: '^[a-zA-Z]+$')]
+    // #[Assert\Regex(pattern: '/^[a-z]+$/i', htmlPattern: '^[a-zA-Z]+$')]
     private $first_name;
 
     #[ORM\Column(type: 'string', length: 255)]
     #[Assert\NotBlank(message: 'Le champ nom est requis.')]
-    #[Assert\Regex(pattern: '/^[a-z]+$/i', htmlPattern: '^[a-zA-Z]+$')]
+    // #[Assert\Regex(pattern: '/^[a-z]+$/i', htmlPattern: '^[a-zA-Z]+$')]
     private $last_name;
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]

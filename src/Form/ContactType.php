@@ -4,6 +4,7 @@ namespace App\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -29,7 +30,9 @@ class ContactType extends AbstractType
                 'constraints' => [
                     new NotBlank([
                         'message' => 'Vous devez ajouter un contenu'
-                    ])
+                    ]),
+                    new Regex(pattern: '/^[a-z à â ä é è ê ë ï î ô ö ù û ü ÿ ç œ 0-9,.!?:;\'-]+$/i', htmlPattern: '^[a-zA-Z]+$')
+
                 ]
             ])
         ;

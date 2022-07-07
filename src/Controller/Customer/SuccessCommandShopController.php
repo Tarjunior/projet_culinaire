@@ -25,12 +25,13 @@ class SuccessCommandShopController extends AbstractController
                             CommandShopRepository $commandShopRepository, 
                             CartService $cartService, MailerService $mailer)
     {
+        // Je récupère l'utilisateur
         /** @var User $user */
         $user = $userRepository->find($id);
 
         if($user)
         {
-
+            // Je trouve la commande
             $commandShop = $commandShopRepository->findOneBy([
                 'user' => $user
             ],[

@@ -10,12 +10,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class CommandShopController extends AbstractController
 {
-    #[Route('/commande/liste', name: 'command_shop_list')]
+    #[Route('/profile/commande/liste', name: 'command_shop_list')]
+    // Méthode permettant de lister les commandes
     public function commandShopList(CommandShopRepository $commandShopRepository)
     {
+        // Je récupère l'utilisateur connecté
         /** @var User $user */
         $user = $this->getUser();
 
+        // Je trouve les commandes 
         $commandShop = $commandShopRepository->findBy([
             'user' => $user
         ],
@@ -29,6 +32,7 @@ class CommandShopController extends AbstractController
     } 
 
     #[Route('/commande/detail/{id}', name: 'command_shop_detail')]
+    // Méthode permettant de voir les details d'une commande
     public function commandShopDetail($id,CommandShopRepository $commandShopRepository)
     {
         /** @var User $user */
@@ -47,7 +51,7 @@ class CommandShopController extends AbstractController
             $this->addFlash("danger","Cette commande ne vous appartient pas. Impossible de la consulter.");
             return $this->redirectToRoute("command_shop_list");
         }
-        // dd($commandShop);
+        
         return $this->render("customer/commande/detail.html.twig",[
             'commandShop' => $commandShop
         ]);

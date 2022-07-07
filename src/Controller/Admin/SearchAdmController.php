@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class SearchAdmController extends AbstractController
 {
-    #[Route('/search_adm', name: 'search_adm')]
+    #[Route('/admin/search_adm', name: 'search_adm')]
     // Méthode responsable de recherches
     public function searchBarAdm()
     {
@@ -39,6 +39,7 @@ class SearchAdmController extends AbstractController
                 ]
             ])
             ->getForm();
+            
         // Affichage du resultat de la recherche
         return $this->render('searchAdm/searchBarAdm.html.twig', [
             'form' => $form->createView()
@@ -46,12 +47,12 @@ class SearchAdmController extends AbstractController
     }
 
      
-    #[Route('/handleSearch_adm', name:'handleSearch_adm')]
-    // Méthode pour traiter les recherches
+    #[Route('/admin/handleSearch_adm', name:'handleSearch_adm')]
+    // Méthode pour traiter les recherches/gérer les requêtes
     public function handleSearch(Request $request, 
                                 RecipeRepository $recipeRepository, 
                                 ProductRepository $productRepository,
-                                CategoryRepository $categoryRepository)
+                                CategoryRepository $categoryRepository): Response
     {
         // Je récupère la sasie
         $query = $request->request->get('form')['query'];

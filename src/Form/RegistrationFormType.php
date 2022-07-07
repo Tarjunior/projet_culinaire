@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Regex;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
@@ -25,6 +26,9 @@ class RegistrationFormType extends AbstractType
             'label' => 'Prénom',
             'attr' => [
                 'placeholder' => 'Taper le prénom ici...'
+            ],
+            'constraints' => [
+                new Regex(pattern: '/^[a-z à â ä é è ê ë ï î ô ö ù û ü ÿ ç œ ]+$/i', htmlPattern: '^[a-zA-Z]+$')
             ]
         ])
         ->add('last_name',TextType::class,[
@@ -32,6 +36,9 @@ class RegistrationFormType extends AbstractType
             'label' => 'Nom ',
             'attr' => [
                 'placeholder' => 'Taper le nom ici...'
+            ],
+            'constraints' => [
+                new Regex(pattern: '/^[a-z à â ä é è ê ë ï î ô ö ù û ü ÿ ç œ ]+$/i', htmlPattern: '^[a-zA-Z]+$')
             ]
         ])
         ->add('email',EmailType::class,[
@@ -67,12 +74,14 @@ class RegistrationFormType extends AbstractType
                         'message' => 'Le mot de passe est requis',
                     ]),
                     new Length([
-                        'min' => 6,
-                        'minMessage' => 'Le mot de passe doit faire au moins {{ limit }} caractères.',
+                        'min' => 8,
+                        'minMessage' => 'Le mot de passe doit faire au moins {{ limit }} caractères, dont des lettres majuscules et minuscules, un chiffre et un symbole.',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
-                ],
+                    new Regex(pattern: '/^(?=.*\d)(?=.*[A-Z])(?=.*[@#$%])(?!.*(.)\1{2}).*[a-z]/m')
+                    
+                ]
             ],
             'second_options' => [
                 'label' => 'Confirmer votre mot de passe',
@@ -81,7 +90,7 @@ class RegistrationFormType extends AbstractType
                         'message' => 'La confirmation du mot de passe est requise',
                     ]),
                     new Length([
-                        'min' => 6,
+                        'min' => 8,
                         'minMessage' => 'Le mot de passe doit faire au moins {{ limit }} caractères.',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,

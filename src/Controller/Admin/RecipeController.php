@@ -4,8 +4,8 @@ namespace App\Controller\Admin;
 
 use App\Entity\Recipe;
 use App\Form\RecipeType;
-use App\Search\SearchItem;
-use App\Form\SearchItemType;
+// use App\Search\SearchItem;
+// use App\Form\SearchItemType;
 use App\Services\HandleImage;
 use App\Repository\RecipeRepository;
 use Doctrine\ORM\EntityManagerInterface;
@@ -45,10 +45,14 @@ class RecipeController extends AbstractController
     {
         // j'instancie un nouveau objet recipe
         $recipe = new Recipe();
-        // j'appelle Doctrine pour créer un formulaire
+        
+        // Création d'un formulaire à partir de RecipeType
+        // Je y injecte l'instance (l'objet) de la classe catégorie précédemment créée
         $form = $this->createForm(RecipeType::class, $recipe);
+
         // demmande de traitement de la saisie du formulaire
         $form->handleRequest($request);
+        
         // si le form est soumis et qu'il est valide
         if ($form->isSubmitted() && $form->isValid()) {
 
@@ -97,7 +101,7 @@ class RecipeController extends AbstractController
         // Récupération de l'image de la recette
         $oldImage = $recipe->getImage();
 
-        // Création d'un formulaire d'un certain type : RecipeType
+        // Création d'un formulaire à partir de RecipeType
         // J'y injecte l'instance (l'objet) de la classe Recipe précédemment créée
         $form = $this->createForm(RecipeType::class, $recipe);
         // Je traite les saisies du form
@@ -115,8 +119,7 @@ class RecipeController extends AbstractController
                 $handleImage->edit($file,$recipe,$oldImage);
             }
 
-            // L'entity manager persist l'objet recipe
-            // L'entity manager, prépare la recette a aller en base de données
+            // L'entity manager enregistre l'objet en base de données
             $entityManager->flush();
 
             //J'envoie un message flash
